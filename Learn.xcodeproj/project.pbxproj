@@ -9,10 +9,18 @@
 /* Begin PBXBuildFile section */
 		098518DCFB48A0770163C409 /* Pods_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED797032375B2335F2567A3 /* Pods_Learn.framework */; };
 		8F40F1DC20FBB1FB0090C604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */; };
-		8F40F1DE20FBB1FB0090C604 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40F1DD20FBB1FB0090C604 /* ViewController.swift */; };
+		8F40F1DE20FBB1FB0090C604 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40F1DD20FBB1FB0090C604 /* HomeViewController.swift */; };
 		8F40F1E120FBB1FB0090C604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F40F1DF20FBB1FB0090C604 /* Main.storyboard */; };
 		8F40F1E320FBB1FC0090C604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F40F1E220FBB1FC0090C604 /* Assets.xcassets */; };
 		8F40F1E620FBB1FC0090C604 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F40F1E420FBB1FC0090C604 /* LaunchScreen.storyboard */; };
+		C10C56C721026B3100D903E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56C621026B3100D903E8 /* User.swift */; };
+		C10C56CA21026CC100D903E8 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56C921026CC100D903E8 /* Switcher.swift */; };
+		C10C56CD21026D8100D903E8 /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56CC21026D8100D903E8 /* UserDataStore.swift */; };
+		C10C56CF21026E6700D903E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56CE21026E6700D903E8 /* Constants.swift */; };
+		C10C56D121027A3A00D903E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56D021027A3A00D903E8 /* LoginViewController.swift */; };
+		C10C56D5210282CE00D903E8 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56D4210282CE00D903E8 /* LessonViewController.swift */; };
+		C10C56D92102832A00D903E8 /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56D82102832A00D903E8 /* LessonsViewController.swift */; };
+		C18235C320FFB71700244E27 /* LearnApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18235C220FFB71700244E27 /* LearnApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +28,19 @@
 		5957DFBC70FC2B76E9197AD8 /* Pods-Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Learn/Pods-Learn.release.xcconfig"; sourceTree = "<group>"; };
 		8F40F1D820FBB1FB0090C604 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8F40F1DD20FBB1FB0090C604 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8F40F1DD20FBB1FB0090C604 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8F40F1E020FBB1FB0090C604 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F40F1E220FBB1FC0090C604 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F40F1E520FBB1FC0090C604 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F40F1E720FBB1FC0090C604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C10C56C621026B3100D903E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C10C56C921026CC100D903E8 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
+		C10C56CC21026D8100D903E8 /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
+		C10C56CE21026E6700D903E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C10C56D021027A3A00D903E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C10C56D4210282CE00D903E8 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		C10C56D82102832A00D903E8 /* LessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
+		C18235C220FFB71700244E27 /* LearnApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnApi.swift; sourceTree = "<group>"; };
 		E30683C953D33AF2B2989B6C /* Pods-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Learn/Pods-Learn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,14 +86,78 @@
 		8F40F1DA20FBB1FB0090C604 /* Learn */ = {
 			isa = PBXGroup;
 			children = (
+				C10C56CB21026D7400D903E8 /* stores */,
+				C10C56C821026CB200D903E8 /* utilities */,
+				C10C56C521026B1F00D903E8 /* controllers */,
+				C10C56C421026B1900D903E8 /* adapters */,
+				C10C56C321026B1200D903E8 /* models */,
 				8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */,
-				8F40F1DD20FBB1FB0090C604 /* ViewController.swift */,
 				8F40F1DF20FBB1FB0090C604 /* Main.storyboard */,
 				8F40F1E220FBB1FC0090C604 /* Assets.xcassets */,
 				8F40F1E420FBB1FC0090C604 /* LaunchScreen.storyboard */,
 				8F40F1E720FBB1FC0090C604 /* Info.plist */,
 			);
 			path = Learn;
+			sourceTree = "<group>";
+		};
+		C10C56C321026B1200D903E8 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				C10C56C621026B3100D903E8 /* User.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		C10C56C421026B1900D903E8 /* adapters */ = {
+			isa = PBXGroup;
+			children = (
+				C18235C220FFB71700244E27 /* LearnApi.swift */,
+			);
+			path = adapters;
+			sourceTree = "<group>";
+		};
+		C10C56C521026B1F00D903E8 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8F40F1DD20FBB1FB0090C604 /* HomeViewController.swift */,
+				C10C56D7210282E300D903E8 /* Auth */,
+				C10C56D6210282D300D903E8 /* Lessons */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		C10C56C821026CB200D903E8 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C10C56C921026CC100D903E8 /* Switcher.swift */,
+				C10C56CE21026E6700D903E8 /* Constants.swift */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		C10C56CB21026D7400D903E8 /* stores */ = {
+			isa = PBXGroup;
+			children = (
+				C10C56CC21026D8100D903E8 /* UserDataStore.swift */,
+			);
+			path = stores;
+			sourceTree = "<group>";
+		};
+		C10C56D6210282D300D903E8 /* Lessons */ = {
+			isa = PBXGroup;
+			children = (
+				C10C56D4210282CE00D903E8 /* LessonViewController.swift */,
+				C10C56D82102832A00D903E8 /* LessonsViewController.swift */,
+			);
+			path = Lessons;
+			sourceTree = "<group>";
+		};
+		C10C56D7210282E300D903E8 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C10C56D021027A3A00D903E8 /* LoginViewController.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		EADD015898FB5A62FBD69D18 /* Frameworks */ = {
@@ -183,11 +263,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,7 +284,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F40F1DE20FBB1FB0090C604 /* ViewController.swift in Sources */,
+				C10C56CD21026D8100D903E8 /* UserDataStore.swift in Sources */,
+				C10C56D92102832A00D903E8 /* LessonsViewController.swift in Sources */,
+				C10C56CA21026CC100D903E8 /* Switcher.swift in Sources */,
+				C10C56C721026B3100D903E8 /* User.swift in Sources */,
+				C18235C320FFB71700244E27 /* LearnApi.swift in Sources */,
+				C10C56D121027A3A00D903E8 /* LoginViewController.swift in Sources */,
+				C10C56CF21026E6700D903E8 /* Constants.swift in Sources */,
+				8F40F1DE20FBB1FB0090C604 /* HomeViewController.swift in Sources */,
+				C10C56D5210282CE00D903E8 /* LessonViewController.swift in Sources */,
 				8F40F1DC20FBB1FB0090C604 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
