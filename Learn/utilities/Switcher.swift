@@ -13,11 +13,11 @@ class Switcher {
 
     static func updateVC() {
         var rootVC: UIViewController!
-        if loggedIn() {
+//        if loggedIn() {
             rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeVC")
-        } else {
-             rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
-        }
+//        } else {
+//             rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
+//        }
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = rootVC
     }

@@ -13,14 +13,16 @@
 		8F40F1E120FBB1FB0090C604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F40F1DF20FBB1FB0090C604 /* Main.storyboard */; };
 		8F40F1E320FBB1FC0090C604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F40F1E220FBB1FC0090C604 /* Assets.xcassets */; };
 		8F40F1E620FBB1FC0090C604 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F40F1E420FBB1FC0090C604 /* LaunchScreen.storyboard */; };
-		C10C56C721026B3100D903E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56C621026B3100D903E8 /* User.swift */; };
+		C10C56C721026B3100D903E8 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56C621026B3100D903E8 /* Student.swift */; };
 		C10C56CA21026CC100D903E8 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56C921026CC100D903E8 /* Switcher.swift */; };
 		C10C56CD21026D8100D903E8 /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56CC21026D8100D903E8 /* UserDataStore.swift */; };
 		C10C56CF21026E6700D903E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56CE21026E6700D903E8 /* Constants.swift */; };
 		C10C56D121027A3A00D903E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56D021027A3A00D903E8 /* LoginViewController.swift */; };
 		C10C56D5210282CE00D903E8 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56D4210282CE00D903E8 /* LessonViewController.swift */; };
 		C10C56D92102832A00D903E8 /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56D82102832A00D903E8 /* LessonsViewController.swift */; };
+		C13EAC99217FB9EE008640C5 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EAC98217FB9EE008640C5 /* Lesson.swift */; };
 		C18235C320FFB71700244E27 /* LearnApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18235C220FFB71700244E27 /* LearnApi.swift */; };
+		C1DD91F1222A0AD7002328EB /* CurrentLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DD91F0222A0AD7002328EB /* CurrentLessonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,14 +35,16 @@
 		8F40F1E220FBB1FC0090C604 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F40F1E520FBB1FC0090C604 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F40F1E720FBB1FC0090C604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C10C56C621026B3100D903E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C10C56C621026B3100D903E8 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		C10C56C921026CC100D903E8 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
 		C10C56CC21026D8100D903E8 /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
 		C10C56CE21026E6700D903E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C10C56D021027A3A00D903E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C10C56D4210282CE00D903E8 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 		C10C56D82102832A00D903E8 /* LessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
+		C13EAC98217FB9EE008640C5 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		C18235C220FFB71700244E27 /* LearnApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnApi.swift; sourceTree = "<group>"; };
+		C1DD91F0222A0AD7002328EB /* CurrentLessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLessonViewController.swift; sourceTree = "<group>"; };
 		E30683C953D33AF2B2989B6C /* Pods-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Learn/Pods-Learn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +107,8 @@
 		C10C56C321026B1200D903E8 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				C10C56C621026B3100D903E8 /* User.swift */,
+				C10C56C621026B3100D903E8 /* Student.swift */,
+				C13EAC98217FB9EE008640C5 /* Lesson.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			children = (
 				C10C56D4210282CE00D903E8 /* LessonViewController.swift */,
 				C10C56D82102832A00D903E8 /* LessonsViewController.swift */,
+				C1DD91F0222A0AD7002328EB /* CurrentLessonViewController.swift */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -263,14 +269,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Learn/Pods-Learn-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
+				"${BUILT_PRODUCTS_DIR}/IKEventSource/IKEventSource.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IKEventSource.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -286,14 +300,16 @@
 			files = (
 				C10C56CD21026D8100D903E8 /* UserDataStore.swift in Sources */,
 				C10C56D92102832A00D903E8 /* LessonsViewController.swift in Sources */,
+				C1DD91F1222A0AD7002328EB /* CurrentLessonViewController.swift in Sources */,
 				C10C56CA21026CC100D903E8 /* Switcher.swift in Sources */,
-				C10C56C721026B3100D903E8 /* User.swift in Sources */,
+				C10C56C721026B3100D903E8 /* Student.swift in Sources */,
 				C18235C320FFB71700244E27 /* LearnApi.swift in Sources */,
 				C10C56D121027A3A00D903E8 /* LoginViewController.swift in Sources */,
 				C10C56CF21026E6700D903E8 /* Constants.swift in Sources */,
 				8F40F1DE20FBB1FB0090C604 /* HomeViewController.swift in Sources */,
 				C10C56D5210282CE00D903E8 /* LessonViewController.swift in Sources */,
 				8F40F1DC20FBB1FB0090C604 /* AppDelegate.swift in Sources */,
+				C13EAC99217FB9EE008640C5 /* Lesson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

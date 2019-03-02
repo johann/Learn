@@ -1,24 +1,55 @@
 PODS:
   - Alamofire (4.5.1)
-  - Kingfisher (4.8.0)
+  - Down (0.5.2)
+  - IKEventSource (2.1.0)
+  - Kingfisher (5.2.0)
+  - NVActivityIndicatorView (4.6.1):
+    - NVActivityIndicatorView/Presenter (= 4.6.1)
+  - NVActivityIndicatorView/Presenter (4.6.1)
   - OAuthSwift (1.2.0)
+  - SCLAlertView (0.8.1)
 
 DEPENDENCIES:
   - Alamofire
-  - Kingfisher (~> 4.0)
+  - Down
+  - IKEventSource (from `https://github.com/inaka/EventSource`)
+  - Kingfisher
+  - NVActivityIndicatorView
   - OAuthSwift
+  - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift.git`, branch `master`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Down
     - Kingfisher
+    - NVActivityIndicatorView
     - OAuthSwift
+
+EXTERNAL SOURCES:
+  IKEventSource:
+    :git: https://github.com/inaka/EventSource
+  SCLAlertView:
+    :branch: master
+    :git: https://github.com/vikmeup/SCLAlertView-Swift.git
+
+CHECKOUT OPTIONS:
+  IKEventSource:
+    :commit: 1f4c33cfc0283c2c75a40caffc897b9a0fddadf8
+    :git: https://github.com/inaka/EventSource
+  SCLAlertView:
+    :commit: d371170ca2e276462ff229e675a2d2020ad2bb72
+    :git: https://github.com/vikmeup/SCLAlertView-Swift.git
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  Down: 587371ad58002b06023d9c602519216862c3acbc
+  IKEventSource: eeb589b05053ac0e1314dea015f5a8d3c3cb24ab
+  Kingfisher: 07067cfacf371117330dceb4b4b8f5c4b691ab42
+  NVActivityIndicatorView: 4ca19fccc84595a78957336a086d00a49be6ce61
   OAuthSwift: 7fd6855b8e4d58eb5a30d156ea9bed7a8aecd1ca
+  SCLAlertView: 9fea8ac145c0bd4989ef6abe1d3859b48f458986
 
-PODFILE CHECKSUM: c6311170cf5fa06067bfc3d8d8b99e76359fec69
+PODFILE CHECKSUM: f79dcdaeb9815723feeb2ea6ea733de0381feb70
 
 COCOAPODS: 1.5.3
