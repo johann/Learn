@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
         store.fetchProgress { (studentWithProgress) in
             print(studentWithProgress)
             self.updateViewWith(studentWithProgress)
-            
+
         }
       
         // Do any additional setup after loading the view, typically from a nib.

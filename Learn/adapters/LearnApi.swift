@@ -15,10 +15,9 @@ struct LearnApi {
             "Authorization": "Bearer 27c136770c55d8e66f4aff9fdb4e879abdab6385b4ce035ca004906baf74f1fb",
             "Content-Type": "application/json",
             "Accept": "version=1"
-            
         ]
         
-        Alamofire.request("https://learn.co/api/batches/\(batch)/tracks/\(track)", headers: headers).responseData { (res) in
+        Alamofire.request("\(Constants.learnAPI)/api/batches/\(batch)/tracks/\(track)", headers: headers).responseData { (res) in
             
             if let data = res.data {
                 let decoder = JSONDecoder()
@@ -30,8 +29,6 @@ struct LearnApi {
                 }).first {
                     completion(student)
                 }
-                
-
             }
             
         }
