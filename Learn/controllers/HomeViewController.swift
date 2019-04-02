@@ -19,16 +19,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var velocityLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    
-    
-    
-    
-    
-    
-    
-    
     let store = UserDataStore.shared
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +48,5 @@ class HomeViewController: UIViewController {
         }
     }
     
-
 }
 
