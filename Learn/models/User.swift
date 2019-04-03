@@ -17,16 +17,16 @@ struct StudentDataTransformer : Codable {
 
 struct Student: Codable {
     var id: Int
-    var fullName: String
-    var email: String
-    var githubGravatar: String?
-    var githubUsername: String?
+    var learnUuid: String
+    var displayName: String
     var lastSeenAt: String?
+    var learnUsername: String
+    var gravatarUrl: String?
     var velocity: Int
     var completedLessonsCount: Int
     var totalLessonsCount: Int
-    var completedLabsCount: Int
-    var totalLabsCount: Int
-    var batchId: String
-    var trackId: String
+    var email: String
+    var activeBatch: Batch
+    var activeTrack: Track
+    var activeCourse: Course
 }

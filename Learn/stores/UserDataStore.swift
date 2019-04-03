@@ -15,6 +15,13 @@ final class UserDataStore {
     
     fileprivate init() {}
     
+    func fetchProfile(completion: @escaping (Student) -> ()) {
+        LearnApi.getProfile() { (student) in
+            self.student = student
+            completion(student)
+        }
+    }
+    
     
     func fetchProgress(completion: @escaping (Student) -> ()) {
         LearnApi.getCanonicalProgress(batch: "597", track: "25054") { (student) in
