@@ -9,14 +9,14 @@
 import Alamofire
 
 struct LearnApi {
-    static func getProfile(completion: @escaping (Student) -> ()) {
+    static func getProfile(_ token: String, completion: @escaping (Student) -> ()) {
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer be6fd5e3d25ef654e1dcc630d1f2f6e7bcbea59e5a3c0899b447bc631c90cad2",
+            "Authorization": "Bearer \(token)",
             "Content-Type": "application/json",
             "Accept": "version=1"
         ]
         
-        Alamofire.request("\(Constants.localLearnAPI)/api/profiles/me", headers: headers).responseData { (res) in
+        Alamofire.request("\(Constants.qaLearnAPI)/api/profiles/me", headers: headers).responseJSON { (res) in
             if let data = res.data {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -29,14 +29,14 @@ struct LearnApi {
     }
     
     static func getCanonicalProgress(batch: String , track: String, completion: @escaping (Student) -> ()) {
-    
+        
         let headers: HTTPHeaders = [
             "Authorization": "Bearer 27c136770c55d8e66f4aff9fdb4e879abdab6385b4ce035ca004906baf74f1fb",
             "Content-Type": "application/json",
             "Accept": "version=1"
         ]
         
-        Alamofire.request("\(Constants.learnAPI)/api/batches/\(batch)/tracks/\(track)", headers: headers).responseData { (res) in
+        Alamofire.request("\(Constants.qaLearnAPI)/api/batches/\(batch)/tracks/\(track)", headers: headers).responseData { (res) in
             
             if let data = res.data {
                 let decoder = JSONDecoder()

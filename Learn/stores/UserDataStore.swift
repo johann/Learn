@@ -12,11 +12,16 @@ import Foundation
 final class UserDataStore {
     static let shared = UserDataStore()
     var student: Student?
+    var token: String {
+        guard let token = UserDefaults.standard.string(forKey: "token") else { fatalError("Token not found") }
+        return token
+    }
     
     fileprivate init() {}
     
+    
     func fetchProfile(completion: @escaping (Student) -> ()) {
-        LearnApi.getProfile() { (student) in
+        LearnApi.getProfile(token) { (student) in
             self.student = student
             completion(student)
         }
