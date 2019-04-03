@@ -19,24 +19,20 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var velocityLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    
-    
-    
-    
-    
-    
-    
-    
     let store = UserDataStore.shared
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        store.fetchProgress { (studentWithProgress) in
-            print(studentWithProgress)
-            self.updateViewWith(studentWithProgress)
-            
+//        store.fetchProgress { (studentWithProgress) in
+//            print(studentWithProgress)
+//            self.updateViewWith(studentWithProgress)
+//
+//        }
+        
+        store.fetchProfile { (student) in
+            print(student)
+            self.updateViewWith(student)
         }
       
         // Do any additional setup after loading the view, typically from a nib.
@@ -44,19 +40,14 @@ class HomeViewController: UIViewController {
     
     func updateViewWith(_ student: Student) {
         DispatchQueue.main.async {
-            self.nameLabel.text = "johann"
+            self.nameLabel.text = student.displayName
             self.velocityLabel.text = "\(student.velocity)"
-            self.completionLabel.text = "\(student.completedLabsCount)/\(student.totalLabsCount)"
-//            if let profileUrl = student.githubGravatar, let url = URL(string: profileUrl) {
-//                self.profileImageView.kf.setImage(with: url)
-//            }
-            let profileUrl = "https://avatars.githubusercontent.com/u/20468684"
-            if let url = URL(string: profileUrl) {
+            self.completionLabel.text = "\(student.completedLessonsCount)/\(student.totalLessonsCount)"
+            if let gravatarURL = student.gravatarUrl, let url = URL(string: gravatarURL) {
                 self.profileImageView.kf.setImage(with: url)
             }
         }
     }
     
-
 }
 

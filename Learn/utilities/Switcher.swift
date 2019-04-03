@@ -13,7 +13,7 @@ class Switcher {
 
     static func updateVC() {
         var rootVC: UIViewController!
-        if loggedIn() {
+        if isLoggedIn() {
             rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeVC")
         } else {
              rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
@@ -22,8 +22,8 @@ class Switcher {
         appDelegate.window?.rootViewController = rootVC
     }
     
-    static func loggedIn() -> Bool {
-        guard let token =  UserDefaults.standard.string(forKey: "token") else { return false }
+    static func isLoggedIn() -> Bool {
+        guard UserDefaults.standard.string(forKey: "token") != nil else { return false }
         return true
     }
 }
