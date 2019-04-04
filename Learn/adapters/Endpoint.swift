@@ -12,14 +12,14 @@ public enum Endpoint {
     case profile
     var apiBase: String {
         get {
-            return "\(Constants.qaLearnHost)"
+            return Constants.localHost
         }
     }
     
     var path: String {
         switch self {
         case .profile:
-            return "profiles/me"
+            return "/api/profiles/me"
         }
     }
     
@@ -28,6 +28,7 @@ public enum Endpoint {
         components.scheme = "https"
         components.host = self.apiBase
         components.path = self.path
+       
         return components.url
     }
 }
