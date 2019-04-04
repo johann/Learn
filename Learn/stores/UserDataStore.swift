@@ -8,27 +8,27 @@
 
 import Foundation
 
-
 final class UserDataStore {
     static let shared = UserDataStore()
     var student: Student?
+    var token: String {
+        guard let token = UserDefaults.standard.string(forKey: "token") else { fatalError("Token not found") }
+        return token
+    }
     
     fileprivate init() {}
     
     func fetchProfile(completion: @escaping (Student) -> ()) {
-        LearnApi.getProfile() { (student) in
-            self.student = student
-            completion(student)
+        LearnApi().getProfile(token) { (response) in
+            switch response {
+            case .success(let student):
+                self.student = student
+                completion(student)
+                break
+            case .failure(let error):
+                print(error)
+                break
+            }
         }
     }
-    
-    
-    func fetchProgress(completion: @escaping (Student) -> ()) {
-        LearnApi.getCanonicalProgress(batch: "597", track: "25054") { (student) in
-            self.student = student
-            completion(student)
-        }
-    }
-    
-    
 }
