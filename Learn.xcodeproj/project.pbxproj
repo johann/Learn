@@ -24,6 +24,7 @@
 		C10C56D5210282CE00D903E8 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56D4210282CE00D903E8 /* LessonViewController.swift */; };
 		C10C56D92102832A00D903E8 /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56D82102832A00D903E8 /* LessonsViewController.swift */; };
 		C18235C320FFB71700244E27 /* LearnApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18235C220FFB71700244E27 /* LearnApi.swift */; };
+		C1B2F809225644DA00E97680 /* Learn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1B2F807225644DA00E97680 /* Learn.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		C10C56D4210282CE00D903E8 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 		C10C56D82102832A00D903E8 /* LessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
 		C18235C220FFB71700244E27 /* LearnApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnApi.swift; sourceTree = "<group>"; };
+		C1B2F808225644DA00E97680 /* Learn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Learn.xcdatamodel; sourceTree = "<group>"; };
 		E30683C953D33AF2B2989B6C /* Pods-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Learn/Pods-Learn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 		8F40F1CF20FBB1FB0090C604 = {
 			isa = PBXGroup;
 			children = (
+				C1B2F807225644DA00E97680 /* Learn.xcdatamodeld */,
 				8F40F1DA20FBB1FB0090C604 /* Learn */,
 				8F40F1D920FBB1FB0090C604 /* Products */,
 				0E0DD6211319BC7AF8542097 /* Pods */,
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1B2F809225644DA00E97680 /* Learn.xcdatamodeld in Sources */,
 				6709868222545EF6009E0BAE /* Course.swift in Sources */,
 				C10C56CD21026D8100D903E8 /* UserDataStore.swift in Sources */,
 				C10C56D92102832A00D903E8 /* LessonsViewController.swift in Sources */,
@@ -461,7 +465,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johannkerr.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -480,7 +484,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johannkerr.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -507,6 +511,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C1B2F807225644DA00E97680 /* Learn.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C1B2F808225644DA00E97680 /* Learn.xcdatamodel */,
+			);
+			currentVersion = C1B2F808225644DA00E97680 /* Learn.xcdatamodel */;
+			path = Learn.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8F40F1D020FBB1FB0090C604 /* Project object */;
 }
