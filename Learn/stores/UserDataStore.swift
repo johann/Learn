@@ -21,19 +21,16 @@ final class UserDataStore {
     
     
     func fetchProfile(completion: @escaping (Student) -> ()) {
-        LearnApi.getProfile(token) { (student) in
-            self.student = student
-            completion(student)
+        LearnApi.init().getProfile(token) { (response) in
+            switch response {
+            case .success(let student):
+                self.student = student
+                completion(student)
+                break
+            case .failure(let error):
+                print(error)
+                break
+            }
         }
     }
-    
-    
-    func fetchProgress(completion: @escaping (Student) -> ()) {
-        LearnApi.getCanonicalProgress(batch: "597", track: "25054") { (student) in
-            self.student = student
-            completion(student)
-        }
-    }
-    
-    
 }

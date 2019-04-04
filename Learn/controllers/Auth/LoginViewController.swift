@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
         let oauthswift = OAuth2Swift(consumerKey: Constants.consumerKey, consumerSecret: Constants.consumerSecret, authorizeUrl: "https://learn.co/oauth/authorize", accessTokenUrl: "https://learn.co/oauth/token", responseType: "code")
 
         oauthswift.allowMissingStateCheck = true
-        //2
         oauthswift.authorizeURLHandler = SafariURLHandler(viewController: self, oauthSwift: oauthswift)
 
         let _ = oauthswift.authorize(

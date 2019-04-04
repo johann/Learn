@@ -13,18 +13,20 @@ import Foundation
 enum NetworkError: Error {
     case urlFailure
     case missingData
+    case malformedJSON
     case jsonError
 }
 
 class WebService {
     func request(_ endPoint: Endpoint, headers: [String: String], method: String = "GET", result: @escaping (Result<Data, Error>) -> Void) {
+        
         guard let url = endPoint.url() else {  result(.failure(NetworkError.urlFailure)); return }
         var request = URLRequest(url: url)
         request.httpMethod = method
         for (header, headerValue) in headers {
             request.addValue(headerValue, forHTTPHeaderField: header)
         }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 result(.failure(error))
                 return
@@ -55,24 +57,24 @@ struct LearnApi {
         service.request(.profile, headers: headers) { (result) in
             switch result {
             case .success(let data):
+                var student: Student
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+                do {
+                    student = try decoder.decode(Student.self, from: data)
+                } catch {
+                    completion(.failure(NetworkError.malformedJSON))
+                    break
+                }
+
+                completion(.success(student))
                 break
             case .failure(let error):
+                completion(.failure(error))
                 break
             }
         }
-        
-//        // TODO: Remove Alamofire
-//        Alamofire.request("\(Constants.qaLearnAPI)/api/profiles/me", headers: headers).responseJSON { (res) in
-//            if let data = res.data {
-//                let decoder = JSONDecoder()
-//                decoder.keyDecodingStrategy = .convertFromSnakeCase
-//
-//                // TODO: Remove try!
-//                let student = try! decoder.decode(Student.self, from: data)
-//
-//                completion(student)
-//            }
-//        }
     }
 }
 
