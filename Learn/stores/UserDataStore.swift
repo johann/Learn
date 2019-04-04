@@ -19,7 +19,7 @@ final class UserDataStore {
     fileprivate init() {}
     
     func fetchProfile(completion: @escaping (Student) -> ()) {
-        LearnApi.init().getProfile(token) { (response) in
+        LearnApi().getProfile(token) { (response) in
             switch response {
             case .success(let student):
                 self.student = student
