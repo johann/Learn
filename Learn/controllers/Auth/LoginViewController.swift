@@ -9,9 +9,6 @@
 import UIKit
 import OAuthSwift
 
-//learn-auth://learn/callback
-
-
 class LoginViewController: UIViewController {
     
     let store = UserDataStore.shared

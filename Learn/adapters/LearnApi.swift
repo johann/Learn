@@ -6,9 +6,7 @@
 //  Copyright © 2018 Johann Kerr. All rights reserved.
 //
 
-//import Alamofire
 import Foundation
-
 
 enum NetworkError: Error {
     case urlFailure
@@ -77,4 +75,3 @@ struct LearnApi {
         }
     }
 }
-

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Constants {
     static let qaLearnHost = "qa-ironboard04.fe.flatironschool.com"
     static let localHost = "85fafdb3.ngrok.io"

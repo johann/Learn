@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 final class UserDataStore {
     static let shared = UserDataStore()
     var student: Student?
@@ -18,7 +17,6 @@ final class UserDataStore {
     }
     
     fileprivate init() {}
-    
     
     func fetchProfile(completion: @escaping (Student) -> ()) {
         LearnApi.init().getProfile(token) { (response) in
