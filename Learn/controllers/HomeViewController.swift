@@ -10,9 +10,6 @@ import UIKit
 import OAuthSwift
 import Kingfisher
 
-//learn-auth://learn/callback
-
-
 class HomeViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var completionLabel: UILabel!
@@ -24,14 +21,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        store.fetchProgress { (studentWithProgress) in
-//            print(studentWithProgress)
-//            self.updateViewWith(studentWithProgress)
-//
-//        }
-        
         store.fetchProfile { (student) in
-            print(student)
             self.updateViewWith(student)
         }
       

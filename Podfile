@@ -7,7 +7,5 @@ target 'Learn' do
 
   # Pods for Learn
   pod 'OAuthSwift'
-  pod 'Alamofire'
   pod 'Kingfisher', '~> 4.0'
-
 end
