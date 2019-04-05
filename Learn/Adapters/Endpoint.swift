@@ -10,6 +10,7 @@ import Foundation
 
 public enum Endpoint {
     case profile
+    case lesson(String, String, String)
     var apiBase: String {
         get {
             return Constants.localHost
@@ -20,6 +21,8 @@ public enum Endpoint {
         switch self {
         case .profile:
             return "/api/profiles/me"
+        case .lesson(let userId, let batchId, let trackId):
+            return "/api/users/\(userId)/lessons?batch_id=\(batchId)&track_id=\(trackId)"
         }
     }
     
