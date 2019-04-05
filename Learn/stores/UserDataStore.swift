@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 final class UserDataStore {
     static let shared = UserDataStore()
@@ -17,7 +18,6 @@ final class UserDataStore {
     }
     
     fileprivate init() {}
-    
     func fetchProfile(completion: @escaping (Student) -> ()) {
         LearnApi().getProfile(token) { (response) in
             switch response {
@@ -31,4 +31,33 @@ final class UserDataStore {
             }
         }
     }
+<<<<<<< HEAD
+    
+    // MARK: Persistence Layer
+    
+    private lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "Learn")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
+    
+    private func saveContext () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
+    
+=======
+>>>>>>> origin/master
 }
