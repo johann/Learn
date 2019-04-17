@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		098518DCFB48A0770163C409 /* Pods_Learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED797032375B2335F2567A3 /* Pods_Learn.framework */; };
 		6709867E22545ECC009E0BAE /* Batch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6709867D22545ECC009E0BAE /* Batch.swift */; };
-		6709868022545EE3009E0BAE /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6709867F22545EE3009E0BAE /* Track.swift */; };
 		6709868222545EF6009E0BAE /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6709868122545EF6009E0BAE /* Course.swift */; };
 		67156DB72267C470003BC44E /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67156DB62267C470003BC44E /* TopicsViewController.swift */; };
+		67156DBA2267C7F8003BC44E /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67156DB92267C7F8003BC44E /* Track.swift */; };
 		6748541C22558AA900A33C5F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6748541B22558AA900A33C5F /* Endpoint.swift */; };
 		8F40F1DC20FBB1FB0090C604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */; };
 		8F40F1DE20FBB1FB0090C604 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40F1DD20FBB1FB0090C604 /* HomeViewController.swift */; };
@@ -34,9 +34,9 @@
 		2ED797032375B2335F2567A3 /* Pods_Learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5957DFBC70FC2B76E9197AD8 /* Pods-Learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Learn/Pods-Learn.release.xcconfig"; sourceTree = "<group>"; };
 		6709867D22545ECC009E0BAE /* Batch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch.swift; sourceTree = "<group>"; };
-		6709867F22545EE3009E0BAE /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		6709868122545EF6009E0BAE /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		67156DB62267C470003BC44E /* TopicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
+		67156DB92267C7F8003BC44E /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		6748541B22558AA900A33C5F /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8F40F1D820FBB1FB0090C604 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +79,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		67156DB82267C7DD003BC44E /* Curriculum */ = {
+			isa = PBXGroup;
+			children = (
+				67156DB92267C7F8003BC44E /* Track.swift */,
+			);
+			path = Curriculum;
+			sourceTree = "<group>";
+		};
 		8F40F1CF20FBB1FB0090C604 = {
 			isa = PBXGroup;
 			children = (
@@ -117,9 +125,9 @@
 		C10C56C321026B1200D903E8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				67156DB82267C7DD003BC44E /* Curriculum */,
 				C10C56C621026B3100D903E8 /* User.swift */,
 				6709867D22545ECC009E0BAE /* Batch.swift */,
-				6709867F22545EE3009E0BAE /* Track.swift */,
 				6709868122545EF6009E0BAE /* Course.swift */,
 			);
 			path = Models;
@@ -318,6 +326,7 @@
 				6709868222545EF6009E0BAE /* Course.swift in Sources */,
 				C10C56CD21026D8100D903E8 /* UserDataStore.swift in Sources */,
 				67156DB72267C470003BC44E /* TopicsViewController.swift in Sources */,
+				67156DBA2267C7F8003BC44E /* Track.swift in Sources */,
 				C10C56D92102832A00D903E8 /* LessonsViewController.swift in Sources */,
 				C10C56CA21026CC100D903E8 /* Switcher.swift in Sources */,
 				C10C56C721026B3100D903E8 /* User.swift in Sources */,
@@ -329,7 +338,6 @@
 				8F40F1DE20FBB1FB0090C604 /* HomeViewController.swift in Sources */,
 				8F40F1DC20FBB1FB0090C604 /* AppDelegate.swift in Sources */,
 				C198B3DD226206A70036282B /* LessonViewCell.swift in Sources */,
-				6709868022545EE3009E0BAE /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

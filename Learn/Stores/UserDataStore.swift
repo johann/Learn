@@ -11,6 +11,7 @@ import Foundation
 final class UserDataStore {
     static let shared = UserDataStore()
     var student: Student?
+    var track: Track?
     var token: String {
         guard let token = UserDefaults.standard.string(forKey: "token") else { fatalError("Token not found") }
         return token
@@ -29,6 +30,26 @@ final class UserDataStore {
                 print(error)
                 break
             }
+        }
+    }
+    
+    func fetchCurriculum(completion: @escaping (Track) -> ()) {
+        guard let student = self.student else { fatalError("Student is not defined") }
+        let userId = student.id
+        let batchId = student.activeBatch.id
+        let trackId = student.activeTrack.id
+        
+        LearnApi().getCurriculum(token, userId: userId, batchId: batchId, trackId: trackId) { (response) in
+            switch response {
+            case .success(let track):
+                self.track = track
+                completion(track)
+                break
+            case .failure(let error):
+                print(error)
+                break
+            }
+            
         }
     }
 }

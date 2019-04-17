@@ -49,7 +49,6 @@ struct LearnApi {
     }
     
     func getProfile(_ token: String, completion: @escaping (Result<Student, Error>) -> ()) {
-        
         let headers = headersWithToken(token)
         
         service.request(.profile, headers: headers) { (result) in
@@ -68,6 +67,37 @@ struct LearnApi {
 
                 completion(.success(student))
                 break
+            case .failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
+    }
+    
+    func getCurriculum(_ token: String, userId: Int, batchId: Int, trackId: Int, completion: @escaping (Result<Track, Error>) -> ()) {
+        let headers = headersWithToken(token)
+        let url = Endpoint.curriculum(userId, batchId, trackId).url()
+        // TODO fix this endpoint to stringify params
+        print(url)
+        
+        service.request(.curriculum(userId, batchId, trackId), headers: headers) { (result) in
+            switch result {
+            case .success(let data):
+                var track: Track
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+                do {
+                    print("\(String(decoding: data, as: UTF8.self))")
+                    track = try decoder.decode(Track.self, from: data)
+                } catch {
+                    completion(.failure(NetworkError.malformedJSON))
+                    break
+                }
+
+                completion(.success(track))
+                break
+
             case .failure(let error):
                 completion(.failure(error))
                 break
