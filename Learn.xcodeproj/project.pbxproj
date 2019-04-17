@@ -11,6 +11,7 @@
 		6709867E22545ECC009E0BAE /* Batch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6709867D22545ECC009E0BAE /* Batch.swift */; };
 		6709868022545EE3009E0BAE /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6709867F22545EE3009E0BAE /* Track.swift */; };
 		6709868222545EF6009E0BAE /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6709868122545EF6009E0BAE /* Course.swift */; };
+		67156DB72267C470003BC44E /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67156DB62267C470003BC44E /* TopicsViewController.swift */; };
 		6748541C22558AA900A33C5F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6748541B22558AA900A33C5F /* Endpoint.swift */; };
 		8F40F1DC20FBB1FB0090C604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */; };
 		8F40F1DE20FBB1FB0090C604 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40F1DD20FBB1FB0090C604 /* HomeViewController.swift */; };
@@ -35,6 +36,7 @@
 		6709867D22545ECC009E0BAE /* Batch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch.swift; sourceTree = "<group>"; };
 		6709867F22545EE3009E0BAE /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		6709868122545EF6009E0BAE /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		67156DB62267C470003BC44E /* TopicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
 		6748541B22558AA900A33C5F /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8F40F1D820FBB1FB0090C604 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				C1B2F8192257911A00E97680 /* Views */,
 				C10C56D82102832A00D903E8 /* LessonsViewController.swift */,
+				67156DB62267C470003BC44E /* TopicsViewController.swift */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				C1B2F81D225794C100E97680 /* ColorHelper.swift in Sources */,
 				6709868222545EF6009E0BAE /* Course.swift in Sources */,
 				C10C56CD21026D8100D903E8 /* UserDataStore.swift in Sources */,
+				67156DB72267C470003BC44E /* TopicsViewController.swift in Sources */,
 				C10C56D92102832A00D903E8 /* LessonsViewController.swift in Sources */,
 				C10C56CA21026CC100D903E8 /* Switcher.swift in Sources */,
 				C10C56C721026B3100D903E8 /* User.swift in Sources */,
