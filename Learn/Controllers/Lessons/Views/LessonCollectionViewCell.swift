@@ -10,60 +10,37 @@ import UIKit
 
 class LessonCollectionViewCell: UICollectionViewCell {
     
-    lazy var collectionView: UICollectionView = {
-        var layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.sectionHeadersPinToVisibleBounds = true
-        layout.itemSize = CGSize(width: 80, height: self.contentView.frame.height - 20)
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        self.contentView.addSubview(collectionView)
-        
-        return collectionView
-    }()
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        collectionView.backgroundColor = UIColor.random
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        print("awakeFromNib", self.collectionView)
+//        var layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .horizontal
+//        layout.sectionHeadersPinToVisibleBounds = true
+//        layout.itemSize = CGSize(width: 120, height: self.contentView.frame.height - 20)
+//        self.collectionView.collectionViewLayout = layout
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(LessonCell.self, forCellWithReuseIdentifier: "lessonCell")
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError()
+        super.init(coder: aDecoder)
     }
-    
 }
 
 
 extension LessonCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "lessonCell", for: indexPath)
-        cell.backgroundColor = UIColor.random
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "lessonCell", for: indexPath) 
         return cell
     }
     
     
-}
-
-
-
-class LessonCell: UICollectionViewCell {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError()
-    }
 }
