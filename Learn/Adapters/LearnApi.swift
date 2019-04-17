@@ -76,9 +76,6 @@ struct LearnApi {
     
     func getCurriculum(_ token: String, userId: Int, batchId: Int, trackId: Int, completion: @escaping (Result<Track, Error>) -> ()) {
         let headers = headersWithToken(token)
-        let url = Endpoint.curriculum(userId, batchId, trackId).url()
-        // TODO fix this endpoint to stringify params
-        print(url)
         
         service.request(.curriculum(userId, batchId, trackId), headers: headers) { (result) in
             switch result {
@@ -88,7 +85,6 @@ struct LearnApi {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
 
                 do {
-                    print("\(String(decoding: data, as: UTF8.self))")
                     track = try decoder.decode(Track.self, from: data)
                 } catch {
                     completion(.failure(NetworkError.malformedJSON))

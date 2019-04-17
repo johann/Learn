@@ -22,18 +22,32 @@ public enum Endpoint {
         switch self {
         case .profile:
             return "/api/profiles/me"
-        case .curriculum(let userId, let batchId, let trackId):
-            return "/api/users/\(userId)/track_hierarchy?batch_id=\(batchId)&track_id=\(trackId)"
+        case .curriculum(let userId, _, _):
+            return "/api/users/\(userId)/track_hierarchy"
         case .lesson(let userId, let batchId, let trackId):
             return "/api/users/\(userId)/lessons?batch_id=\(batchId)&track_id=\(trackId)"
         }
     }
+
+    var queryItems: [URLQueryItem] {
+        switch self {
+        case.curriculum(_, let batchId, let trackId):
+            let queryItemBatchId = URLQueryItem(name: "batch_id", value: ("\(batchId)"))
+            let queryItemTrackId = URLQueryItem(name: "track_id", value: ("\(trackId)"))
+            
+            return [queryItemBatchId, queryItemTrackId]
+        default:
+            return []
+        }
+    }
+    
     
     func url() -> URL? {
         var components = URLComponents()
         components.scheme = "https"
         components.host = self.apiBase
         components.path = self.path
+        components.queryItems = self.queryItems
        
         return components.url
     }
