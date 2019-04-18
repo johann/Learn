@@ -26,6 +26,7 @@
 		C10C56D121027A3A00D903E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56D021027A3A00D903E8 /* LoginViewController.swift */; };
 		C10C56D92102832A00D903E8 /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56D82102832A00D903E8 /* LessonsViewController.swift */; };
 		C18235C320FFB71700244E27 /* LearnApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18235C220FFB71700244E27 /* LearnApi.swift */; };
+		C19121312268F9CE0065601A /* Learn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C191212F2268F9CE0065601A /* Learn.xcdatamodeld */; };
 		C198B3DD226206A70036282B /* LessonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C198B3DC226206A70036282B /* LessonViewCell.swift */; };
 		C1B2F81B2257916500E97680 /* LessonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2F81A2257916500E97680 /* LessonCollectionViewCell.swift */; };
 		C1B2F81D225794C100E97680 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2F81C225794C100E97680 /* ColorHelper.swift */; };
@@ -54,6 +55,7 @@
 		C10C56D021027A3A00D903E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C10C56D82102832A00D903E8 /* LessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
 		C18235C220FFB71700244E27 /* LearnApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnApi.swift; sourceTree = "<group>"; };
+		C19121302268F9CE0065601A /* Learn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Learn.xcdatamodel; sourceTree = "<group>"; };
 		C198B3DC226206A70036282B /* LessonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewCell.swift; sourceTree = "<group>"; };
 		C1B2F81A2257916500E97680 /* LessonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1B2F81C225794C100E97680 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		8F40F1DA20FBB1FB0090C604 /* Learn */ = {
 			isa = PBXGroup;
 			children = (
+				C191212F2268F9CE0065601A /* Learn.xcdatamodeld */,
 				C1B2F8192257911A00E97680 /* Views */,
 				C10C56CB21026D7400D903E8 /* Stores */,
 				C10C56C821026CB200D903E8 /* Utilities */,
@@ -330,6 +333,7 @@
 				C10C56CD21026D8100D903E8 /* UserDataStore.swift in Sources */,
 				67156DB72267C470003BC44E /* TopicsViewController.swift in Sources */,
 				67156DBA2267C7F8003BC44E /* Track.swift in Sources */,
+				C19121312268F9CE0065601A /* Learn.xcdatamodeld in Sources */,
 				C10C56D92102832A00D903E8 /* LessonsViewController.swift in Sources */,
 				C10C56CA21026CC100D903E8 /* Switcher.swift in Sources */,
 				67156DBC2267E000003BC44E /* TopicCollectionViewCell.swift in Sources */,
@@ -497,7 +501,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johannkerr.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -516,7 +520,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johannkerr.Learn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -543,6 +547,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C191212F2268F9CE0065601A /* Learn.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C19121302268F9CE0065601A /* Learn.xcdatamodel */,
+			);
+			currentVersion = C19121302268F9CE0065601A /* Learn.xcdatamodel */;
+			path = Learn.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8F40F1D020FBB1FB0090C604 /* Project object */;
 }

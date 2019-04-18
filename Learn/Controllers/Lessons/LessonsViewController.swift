@@ -12,7 +12,6 @@ class LessonsViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("HELLLO")
         setupCollectionViewLayout()
     }
     

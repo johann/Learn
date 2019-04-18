@@ -14,12 +14,6 @@ class LessonCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("awakeFromNib", self.collectionView)
-//        var layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .horizontal
-//        layout.sectionHeadersPinToVisibleBounds = true
-//        layout.itemSize = CGSize(width: 120, height: self.contentView.frame.height - 20)
-//        self.collectionView.collectionViewLayout = layout
         
         collectionView.delegate = self
         collectionView.dataSource = self

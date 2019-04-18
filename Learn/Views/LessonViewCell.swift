@@ -13,12 +13,10 @@ class LessonViewCell: UICollectionViewCell {
    
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("Lessom")
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        print("init")
     }
     
 }

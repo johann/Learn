@@ -24,8 +24,6 @@ class HomeViewController: UIViewController {
         store.fetchProfile { (student) in
             self.updateViewWith(student)
         }
-      
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     func updateViewWith(_ student: Student) {
