@@ -19,7 +19,7 @@
 		8F40F1E120FBB1FB0090C604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F40F1DF20FBB1FB0090C604 /* Main.storyboard */; };
 		8F40F1E320FBB1FC0090C604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F40F1E220FBB1FC0090C604 /* Assets.xcassets */; };
 		8F40F1E620FBB1FC0090C604 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F40F1E420FBB1FC0090C604 /* LaunchScreen.storyboard */; };
-		C10C56C721026B3100D903E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56C621026B3100D903E8 /* User.swift */; };
+		C10C56C721026B3100D903E8 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56C621026B3100D903E8 /* Student.swift */; };
 		C10C56CA21026CC100D903E8 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56C921026CC100D903E8 /* Switcher.swift */; };
 		C10C56CD21026D8100D903E8 /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56CC21026D8100D903E8 /* UserDataStore.swift */; };
 		C10C56CF21026E6700D903E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56CE21026E6700D903E8 /* Constants.swift */; };
@@ -47,7 +47,7 @@
 		8F40F1E220FBB1FC0090C604 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F40F1E520FBB1FC0090C604 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F40F1E720FBB1FC0090C604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C10C56C621026B3100D903E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C10C56C621026B3100D903E8 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		C10C56C921026CC100D903E8 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
 		C10C56CC21026D8100D903E8 /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
 		C10C56CE21026E6700D903E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -110,6 +110,7 @@
 		8F40F1DA20FBB1FB0090C604 /* Learn */ = {
 			isa = PBXGroup;
 			children = (
+				C1B2F8192257911A00E97680 /* Views */,
 				C10C56CB21026D7400D903E8 /* Stores */,
 				C10C56C821026CB200D903E8 /* Utilities */,
 				C10C56C521026B1F00D903E8 /* Controllers */,
@@ -128,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				67156DB82267C7DD003BC44E /* Curriculum */,
-				C10C56C621026B3100D903E8 /* User.swift */,
+				C10C56C621026B3100D903E8 /* Student.swift */,
 				6709867D22545ECC009E0BAE /* Batch.swift */,
 				6709868122545EF6009E0BAE /* Course.swift */,
 			);
@@ -175,7 +176,6 @@
 		C10C56D6210282D300D903E8 /* Lessons */ = {
 			isa = PBXGroup;
 			children = (
-				C1B2F8192257911A00E97680 /* Views */,
 				C10C56D82102832A00D903E8 /* LessonsViewController.swift */,
 				67156DB62267C470003BC44E /* TopicsViewController.swift */,
 			);
@@ -333,7 +333,7 @@
 				C10C56D92102832A00D903E8 /* LessonsViewController.swift in Sources */,
 				C10C56CA21026CC100D903E8 /* Switcher.swift in Sources */,
 				67156DBC2267E000003BC44E /* TopicCollectionViewCell.swift in Sources */,
-				C10C56C721026B3100D903E8 /* User.swift in Sources */,
+				C10C56C721026B3100D903E8 /* Student.swift in Sources */,
 				C1B2F81B2257916500E97680 /* LessonCollectionViewCell.swift in Sources */,
 				C18235C320FFB71700244E27 /* LearnApi.swift in Sources */,
 				6709867E22545ECC009E0BAE /* Batch.swift in Sources */,

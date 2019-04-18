@@ -57,7 +57,8 @@ struct LearnApi {
                 var student: Student
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-
+                let value = String(decoding: data, as: UTF8.self)
+                
                 do {
                     student = try decoder.decode(Student.self, from: data)
                 } catch {

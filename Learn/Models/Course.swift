@@ -9,8 +9,8 @@
 import Foundation
 
 struct Course: Codable {
-    var id: Int
-    var displayName: String
-    var slug: String
-    var uuid: String
+    var id: Int?
+    var displayName: String?
+    var slug: String?
+    var uuid: String?
 }

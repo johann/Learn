@@ -14,6 +14,8 @@ class TopicsViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupCollectionView()
+        
         if let _ = store.student {
             store.fetchCurriculum { (track) in
                 self.reloadView()
@@ -27,16 +29,23 @@ class TopicsViewController: UICollectionViewController {
         }
     }
     
-    // MARK: Update Track Info
+    func setupCollectionView() {
+        guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else { return }
+        layout.sectionHeadersPinToVisibleBounds = true
+        let padding: CGFloat = 10
+        let collectionCellSize = collectionView.frame.size.width - padding
+        layout.itemSize = CGSize(width: collectionCellSize/2, height: 100)
+        layout.minimumLineSpacing = 2
+    }
+    
     func reloadView() {
         DispatchQueue.main.async {
-            self.collectionView.reloadSections(IndexSet(integer: 0))
+            self.collectionView.reloadData()
         }
     }
 
-    // MARK: - Navigation
-
     // MARK: UICollectionViewDataSource
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let track = self.store.track else { return 0 }
         guard let topics = track.topics else { return 0 }
@@ -44,18 +53,16 @@ class TopicsViewController: UICollectionViewController {
         return topics.count
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> TopicCollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topicCell", for: indexPath) as! TopicCollectionViewCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topicCell", for: indexPath) as? TopicCollectionViewCell else { return UICollectionViewCell(frame: .zero) }
         
-        guard let track = self.store.track else { return cell }
-        guard let topics = track.topics else { return cell }
+        if let track = self.store.track, let topics = track.topics {
+            let topic = topics[indexPath.row]
+            cell.configureCell(topic)
+            
+        }
         
-        let topic = topics[indexPath.row]
-    
-        cell.backgroundColor = UIColor.random
-        cell.topicTitleField.text = topic.title
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
 }

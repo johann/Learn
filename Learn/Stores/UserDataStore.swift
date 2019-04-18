@@ -37,7 +37,8 @@ final class UserDataStore {
         guard let student = self.student else { fatalError("Student is not defined") }
         let userId = student.id
         let batchId = student.activeBatch.id
-        let trackId = student.activeTrack.id
+//        let trackId = student.activeTrack.id
+        let trackId = 45971
         
         LearnApi().getCurriculum(token, userId: userId, batchId: batchId, trackId: trackId) { (response) in
             switch response {

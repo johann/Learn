@@ -29,7 +29,7 @@ public enum Endpoint {
         }
     }
 
-    var queryItems: [URLQueryItem] {
+    var queryItems: [URLQueryItem]? {
         switch self {
         case.curriculum(_, let batchId, let trackId):
             let queryItemBatchId = URLQueryItem(name: "batch_id", value: ("\(batchId)"))
@@ -37,7 +37,7 @@ public enum Endpoint {
             
             return [queryItemBatchId, queryItemTrackId]
         default:
-            return []
+            return nil
         }
     }
     
@@ -47,8 +47,9 @@ public enum Endpoint {
         components.scheme = "https"
         components.host = self.apiBase
         components.path = self.path
-        components.queryItems = self.queryItems
-       
+        if let queryItems = self.queryItems {
+            components.queryItems = queryItems
+        }
         return components.url
     }
 }
