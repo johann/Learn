@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Student.swift
 //  Learn
 //
 //  Created by Johann Kerr on 7/20/18.
@@ -30,3 +30,4 @@ struct Student: Codable {
     var activeTrack: Track
     var activeCourse: Course
 }
+
