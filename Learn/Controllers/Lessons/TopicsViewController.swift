@@ -10,6 +10,7 @@ import UIKit
 
 class TopicsViewController: UICollectionViewController {
     let store = UserDataStore.shared
+    var track: Track?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +19,13 @@ class TopicsViewController: UICollectionViewController {
         
         if let _ = store.student {
             store.fetchCurriculum { (track) in
+                self.track = track
                 self.reloadView()
             }
         } else {
             store.fetchProfile { (_) in
                 self.store.fetchCurriculum { (track) in
+                    self.track = track
                     self.reloadView()
                 }
             }
@@ -43,6 +46,20 @@ class TopicsViewController: UICollectionViewController {
             self.collectionView.reloadData()
         }
     }
+    
+    // MARK: Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showUnits" {
+            guard let destination = segue.destination as? UnitsViewController, let indexPath = self.collectionView.indexPathsForSelectedItems?.first, let track = self.track, let topics = track.topics  else { return }
+            
+            let topic = topics[indexPath.row]
+            if let units = topic.units {
+                destination.configureUnits(units)
+            }
+            
+        }
+    }
 
     // MARK: UICollectionViewDataSource
     
@@ -59,7 +76,6 @@ class TopicsViewController: UICollectionViewController {
         if let track = self.store.track, let topics = track.topics {
             let topic = topics[indexPath.row]
             cell.configureCell(topic)
-            
         }
         
         return cell

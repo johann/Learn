@@ -10,8 +10,7 @@ import UIKit
 
 class TopicCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var topicTitleField: UILabel!
-    
-    
+
     func configureCell(_ topic: Topic) {
         self.topicTitleField.text = topic.title
     }
