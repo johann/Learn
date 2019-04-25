@@ -8,36 +8,31 @@
 
 import Foundation
 
-protocol Curriculum {
-    var id: Int { get set }
-    var slug: String { get set }
-    var title: String { get set }
-}
-
 struct Track: Curriculum, Codable {
     var id: Int
     var slug: String
     var title: String
     var topics: [Topic]?
-}
+    
+    
+    var lessons: [Lesson] {
+        get {
+            guard let topics = self.topics else { return [] }
 
-struct Topic: Curriculum, Codable {
-    var id: Int
-    var slug: String
-    var title: String
-    var units: [Unit]?
-}
-
-struct Unit: Curriculum, Codable {
-    var id: Int
-    var slug: String
-    var title: String
-    var lessons: [Lesson]?
-}
-
-struct Lesson: Curriculum, Codable {
-    var id: Int
-    var slug: String
-    var title: String
-    var readme: String
+            let units = topics.compactMap { (topic) -> [Unit]? in
+                guard let units = topic.units else { return nil }
+                
+                return units
+            }.joined()
+            
+            let lessons = units.compactMap { (unit) -> [Lesson]? in
+                guard let lessons = unit.lessons else { return nil }
+                
+                return lessons
+            }.joined()
+            
+            
+            return lessons.map { (lesson) in lesson }
+        }
+    }
 }
