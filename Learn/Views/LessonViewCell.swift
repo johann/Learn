@@ -9,7 +9,8 @@
 import UIKit
 
 class LessonViewCell: UICollectionViewCell {
-    @IBOutlet weak var lessonView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
    
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,6 +18,10 @@ class LessonViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func configureCell(_ lesson: Lesson) {
+        self.titleLabel.text = lesson.title
     }
     
 }
