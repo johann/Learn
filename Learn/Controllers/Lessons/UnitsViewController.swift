@@ -29,7 +29,6 @@ class UnitsViewController: UICollectionViewController {
         layout.minimumLineSpacing = 2
     }
     
-    
     func showLessonView(lesson: Lesson) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let lessonVC = storyboard.instantiateViewController(withIdentifier: "lessonViewController") as? LessonViewController {
@@ -43,7 +42,6 @@ class UnitsViewController: UICollectionViewController {
 
 
 // MARK: CollectionViewDelegate & Datasource
-
 extension UnitsViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return units.count
@@ -59,9 +57,7 @@ extension UnitsViewController {
     }
 }
 
-
 // MARK: LessonDelegate
-
 extension UnitsViewController: LessonDelegate {
     func selectLesson(_ lesson: Lesson) {
         showLessonView(lesson: lesson)

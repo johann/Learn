@@ -38,8 +38,6 @@ class UnitCollectionViewCell: UICollectionViewCell {
     
 }
 
-
-
 extension UnitCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return lessons.count
@@ -49,7 +47,6 @@ extension UnitCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "lessonCell", for: indexPath) as? LessonViewCell else { return UICollectionViewCell(frame: .zero) }
         let lesson = self.lessons[indexPath.row]
         cell.configureCell(lesson)
-        
         return cell
     }
     
@@ -57,6 +54,4 @@ extension UnitCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
         let lesson = self.lessons[indexPath.row]
         lessonDelegate?.selectLesson(lesson)
     }
-    
-    
 }
