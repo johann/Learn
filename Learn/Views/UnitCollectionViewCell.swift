@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol LessonDelegate {
+    func selectLesson(_ lesson: Lesson)
+}
+
 class UnitCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     var lessons = [Lesson]()
+    var lessonDelegate: LessonDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,7 +38,6 @@ class UnitCollectionViewCell: UICollectionViewCell {
     
 }
 
-
 extension UnitCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return lessons.count
@@ -42,10 +46,12 @@ extension UnitCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "lessonCell", for: indexPath) as? LessonViewCell else { return UICollectionViewCell(frame: .zero) }
         let lesson = self.lessons[indexPath.row]
-        
         cell.configureCell(lesson)
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let lesson = self.lessons[indexPath.row]
+        lessonDelegate?.selectLesson(lesson)
+    }
 }

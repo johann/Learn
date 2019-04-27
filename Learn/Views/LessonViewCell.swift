@@ -10,8 +10,7 @@ import UIKit
 
 class LessonViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
-    
-   
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

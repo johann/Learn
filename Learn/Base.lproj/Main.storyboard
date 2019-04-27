@@ -326,6 +326,22 @@
             </objects>
             <point key="canvasLocation" x="2975.1999999999998" y="221.73913043478262"/>
         </scene>
+        <!--Lesson View Controller-->
+        <scene sceneID="wNz-f2-yVD">
+            <objects>
+                <viewController storyboardIdentifier="lessonViewController" id="dhy-Db-Lpv" customClass="LessonViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e8Q-yo-ZHZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2dv-6a-VXP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mCL-eN-4ck"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uXc-wB-IU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4868" y="221.73913043478262"/>
+        </scene>
         <!--Topics View Controller-->
         <scene sceneID="W7O-y8-vXm">
             <objects>
