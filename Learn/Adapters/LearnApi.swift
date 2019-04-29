@@ -109,24 +109,18 @@ struct LearnApi {
     func getCurriculum(_ token: String, userId: Int, batchId: Int, trackId: Int, completion: @escaping (Result<Track, Error>) -> ()) {
         let headers = headersWithToken(token)
         if let trackSlug = getUserTrackFromDefaults(), let track = getTrackFromDisk(slug: trackSlug) {
-            print("Getting from cache")
             completion(.success(track))
             return
         }
-        
-        print("Calling first time")
         service.request(.curriculum(userId, batchId, trackId), headers: headers) { (result) in
             switch result {
             case .success(let data):
-
-                
                 var track: Track
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
 
                 do {
                     track = try decoder.decode(Track.self, from: data)
-                    print("Caching", track.slug)
                     self.cacheData(by: track.slug, data: data)
                     UserDefaults.standard.set(track.slug, forKey: "trackSlugForKey")
                 } catch {
