@@ -74,18 +74,61 @@ struct LearnApi {
         }
     }
     
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func cacheData(by slug: String, data: Data) {
+        let fullPath = self.getDocumentsDirectory().appendingPathComponent(slug)
+        try? data.write(to: fullPath)
+    }
+    
+    
+    func getTrackFromDisk(slug: String) -> Track? {
+        let fullPath = self.getDocumentsDirectory().appendingPathComponent(slug)
+        let stringData = try? String(contentsOf: fullPath)
+        if let stringData = stringData {
+            let data = Data(stringData.utf8)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let track = try? decoder.decode(Track.self, from: data)
+            return track
+        } else {
+            return nil
+        }
+    }
+    
+    
+    func getUserTrackFromDefaults() -> String? {
+       let trackSlug = UserDefaults.standard.string(forKey: "trackSlugForKey")
+        return trackSlug
+    }
+    
+    
     func getCurriculum(_ token: String, userId: Int, batchId: Int, trackId: Int, completion: @escaping (Result<Track, Error>) -> ()) {
         let headers = headersWithToken(token)
+        if let trackSlug = getUserTrackFromDefaults(), let track = getTrackFromDisk(slug: trackSlug) {
+            print("Getting from cache")
+            completion(.success(track))
+            return
+        }
         
+        print("Calling first time")
         service.request(.curriculum(userId, batchId, trackId), headers: headers) { (result) in
             switch result {
             case .success(let data):
+
+                
                 var track: Track
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
 
                 do {
                     track = try decoder.decode(Track.self, from: data)
+                    print("Caching", track.slug)
+                    self.cacheData(by: track.slug, data: data)
+                    UserDefaults.standard.set(track.slug, forKey: "trackSlugForKey")
                 } catch {
                     completion(.failure(NetworkError.malformedJSON))
                     break
