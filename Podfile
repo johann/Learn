@@ -8,5 +8,5 @@ target 'Learn' do
   # Pods for Learn
   pod 'OAuthSwift'
   pod 'Kingfisher', '~> 4.0'
-  pod 'Down'
+  pod 'Down', :git => 'https://github.com/iwasrobbed/Down'
 end
