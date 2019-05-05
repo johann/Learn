@@ -8,37 +8,15 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case urlFailure
-    case missingData
-    case malformedJSON
-    case jsonError
-}
-
-class WebService {
-    func request(_ endPoint: Endpoint, headers: [String: String], method: String = "GET", result: @escaping (Result<Data, Error>) -> Void) {
-        
-        guard let url = endPoint.url() else {  result(.failure(NetworkError.urlFailure)); return }
-        var request = URLRequest(url: url)
-        request.httpMethod = method
-        for (header, headerValue) in headers {
-            request.addValue(headerValue, forHTTPHeaderField: header)
-        }
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                result(.failure(error))
-                return
-            }
-            guard let data = data else { result(.failure(NetworkError.missingData)); return }
-            result(.success(data))
-        }.resume()
-    }
-}
-
 struct LearnApi {
     var service: WebService
+    var decoder: JSONDecoder
 
-    init(_ service: WebService = .init()) { self.service = service }
+    init(_ service: WebService = .init(), _ decoder: JSONDecoder = .init()) {
+        self.service = service
+        self.decoder = decoder
+        self.decoder.keyDecodingStrategy = .convertFromSnakeCase
+    }
     
     func headersWithToken(_ token: String) -> [String: String] {
         return [
@@ -54,86 +32,36 @@ struct LearnApi {
         service.request(.profile, headers: headers) { (result) in
             switch result {
             case .success(let data):
-                var student: Student
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-
                 do {
-                    student = try decoder.decode(Student.self, from: data)
+                    let student = try self.decoder.decode(Student.self, from: data)
+                    completion(.success(student))
                 } catch {
                     completion(.failure(NetworkError.malformedJSON))
-                    break
                 }
-
-                completion(.success(student))
-                break
             case .failure(let error):
                 completion(.failure(error))
-                break
             }
         }
     }
     
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
-    
-    func cacheData(by slug: String, data: Data) {
-        let fullPath = self.getDocumentsDirectory().appendingPathComponent(slug)
-        try? data.write(to: fullPath)
-    }
-    
-    
-    func getTrackFromDisk(slug: String) -> Track? {
-        let fullPath = self.getDocumentsDirectory().appendingPathComponent(slug)
-        let stringData = try? String(contentsOf: fullPath)
-        if let stringData = stringData {
-            let data = Data(stringData.utf8)
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let track = try? decoder.decode(Track.self, from: data)
-            return track
-        } else {
-            return nil
-        }
-    }
-    
-    
-    func getUserTrackFromDefaults() -> String? {
-       let trackSlug = UserDefaults.standard.string(forKey: "trackSlugForKey")
-        return trackSlug
-    }
-    
-    
     func getCurriculum(_ token: String, userId: Int, batchId: Int, trackId: Int, completion: @escaping (Result<Track, Error>) -> ()) {
-        let headers = headersWithToken(token)
-        if let trackSlug = getUserTrackFromDefaults(), let track = getTrackFromDisk(slug: trackSlug) {
+        if let track = LearnTrackCache().get() {
             completion(.success(track))
             return
         }
-        service.request(.curriculum(userId, batchId, trackId), headers: headers) { (result) in
+        
+        service.request(.curriculum(userId, batchId, trackId), headers: headersWithToken(token)) { (result) in
             switch result {
             case .success(let data):
-                var track: Track
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-
                 do {
-                    track = try decoder.decode(Track.self, from: data)
-                    self.cacheData(by: track.slug, data: data)
-                    UserDefaults.standard.set(track.slug, forKey: "trackSlugForKey")
+                    let track = try self.decoder.decode(Track.self, from: data)
+                    LearnTrackCache().set(track, data: data)
+                    completion(.success(track))
                 } catch {
                     completion(.failure(NetworkError.malformedJSON))
-                    break
                 }
-
-                completion(.success(track))
-                break
-
             case .failure(let error):
                 completion(.failure(error))
-                break
             }
         }
     }
