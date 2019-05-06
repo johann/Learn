@@ -5,11 +5,10 @@
 //  Created by Luke Ghenco on 5/5/19.
 //  Copyright © 2019 Johann Kerr. All rights reserved.
 //
-
 import Foundation
 
 struct LearnTrackCache {
-    var decoder: JSONDecoder
+    private var decoder: JSONDecoder
     
     init(_ decoder: JSONDecoder = .init()) {
         self.decoder = decoder
@@ -25,6 +24,11 @@ struct LearnTrackCache {
         cacheTrackUUID(track.uuid)
         let trackPath = self.getDocumentsDirectory().appendingPathComponent(track.uuid)
         try? data.write(to: trackPath)
+    }
+    
+    func remove(_ trackUUID: String) {
+        let trackPath = self.getDocumentsDirectory().appendingPathComponent(trackUUID)
+        try? FileManager.default.removeItem(at: trackPath)
     }
     
     private func cacheTrackUUID(_ trackUUID: String) {

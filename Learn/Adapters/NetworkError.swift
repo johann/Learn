@@ -5,7 +5,6 @@
 //  Created by Luke Ghenco on 5/5/19.
 //  Copyright © 2019 Johann Kerr. All rights reserved.
 //
-
 import Foundation
 
 enum NetworkError: Error {

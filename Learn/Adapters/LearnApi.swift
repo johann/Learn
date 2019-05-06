@@ -5,12 +5,11 @@
 //  Created by Johann Kerr on 7/18/18.
 //  Copyright © 2018 Johann Kerr. All rights reserved.
 //
-
 import Foundation
 
 struct LearnApi {
-    var service: WebService
-    var decoder: JSONDecoder
+    private var service: WebService
+    private var decoder: JSONDecoder
 
     init(_ service: WebService = .init(), _ decoder: JSONDecoder = .init()) {
         self.service = service

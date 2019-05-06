@@ -37,10 +37,14 @@ final class UserDataStore {
     func fetchCurriculum(completion: @escaping (Track) -> ()) {
         guard let student = self.student else { fatalError("Student is not defined") }
         
-        if let track = LearnTrackCache().get(), track.uuid == student.activeTrack.uuid {
-            self.track = track
-            completion(track)
-            return
+        if let track = LearnTrackCache().get() {
+            if track.uuid == student.activeTrack.uuid {
+                self.track = track
+                completion(track)
+                return
+            } else {
+            LearnTrackCache().remove(track.uuid)
+            }
         }
         
         LearnApi().getCurriculum(
