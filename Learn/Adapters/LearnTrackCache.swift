@@ -7,13 +7,12 @@
 //
 import Foundation
 
-struct LearnTrackCache {
-    private var decoder: JSONDecoder
-    
-    init(_ decoder: JSONDecoder = .init()) {
-        self.decoder = decoder
-        self.decoder.keyDecodingStrategy = .convertFromSnakeCase
-    }
+class LearnTrackCache {
+    lazy var decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }()
     
     func get() -> Track? {
         guard let trackUUID = getUserTrackFromDefaults() else { return nil }

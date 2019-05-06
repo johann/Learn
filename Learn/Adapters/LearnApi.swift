@@ -7,14 +7,16 @@
 //
 import Foundation
 
-struct LearnApi {
+class LearnApi {
     private var service: WebService
-    private var decoder: JSONDecoder
+    lazy var decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }()
 
-    init(_ service: WebService = .init(), _ decoder: JSONDecoder = .init()) {
+    init(_ service: WebService = .init()) {
         self.service = service
-        self.decoder = decoder
-        self.decoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
     func headersWithToken(_ token: String) -> [String: String] {
