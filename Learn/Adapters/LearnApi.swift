@@ -45,11 +45,6 @@ struct LearnApi {
     }
     
     func getCurriculum(_ token: String, userId: Int, batchId: Int, trackId: Int, completion: @escaping (Result<Track, Error>) -> ()) {
-        if let track = LearnTrackCache().get() {
-            completion(.success(track))
-            return
-        }
-        
         service.request(.curriculum(userId, batchId, trackId), headers: headersWithToken(token)) { (result) in
             switch result {
             case .success(let data):
