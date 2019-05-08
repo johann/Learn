@@ -9,15 +9,11 @@ import UIKit
 
 
 class MainTabBarController: UITabBarController, Storyboardable {
+    let curriculum = CurriculumCoordinator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.tintColor = UIColor.black
-        
-        let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.red
-        let uiNav = UINavigationController(rootViewController: vc)
-
-        viewControllers = [uiNav]
+        viewControllers = [curriculum.navigationController]
     }
 }
