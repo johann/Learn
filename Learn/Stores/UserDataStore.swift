@@ -43,7 +43,7 @@ final class UserDataStore {
                 completion(track)
                 return
             } else {
-            LearnTrackCache().remove(track.uuid)
+                LearnTrackCache().remove(track.uuid)
             }
         }
         

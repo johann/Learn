@@ -7,13 +7,7 @@
 //
 import Foundation
 
-class LearnTrackCache {
-    lazy var decoder: JSONDecoder = {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return decoder
-    }()
-    
+struct LearnTrackCache {
     func get() -> Track? {
         guard let trackUUID = getUserTrackFromDefaults() else { return nil }
         return decodeTrackFromDisk(trackUUID)
@@ -36,10 +30,12 @@ class LearnTrackCache {
     
     private func decodeTrackFromDisk(_ trackUUID: String) -> Track? {
         let trackPath = self.getDocumentsDirectory().appendingPathComponent(trackUUID)
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         
         do {
             let stringData = try String(contentsOf: trackPath)
-            let track = try self.decoder.decode(Track.self, from: Data(stringData.utf8))
+            let track = try decoder.decode(Track.self, from: Data(stringData.utf8))
             return track
         } catch {
             return nil
