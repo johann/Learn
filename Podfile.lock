@@ -1,5 +1,5 @@
 PODS:
-  - Down (0.6.2)
+  - Down (0.8.1)
   - Kingfisher (4.10.1)
   - OAuthSwift (1.3.0)
 
@@ -15,7 +15,7 @@ SPEC REPOS:
     - OAuthSwift
 
 SPEC CHECKSUMS:
-  Down: 8c59a03cb229ef28dfa774b2132da860f3dee0ac
+  Down: 3aa5ab1aee1a2ffff3c07291e9210dac5cc462cd
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   OAuthSwift: 7ef2f74cb570e1e30e2aeddc58fccc0f3891d057
 
