@@ -10,6 +10,7 @@ import Foundation
 
 struct Track: Curriculum, Codable {
     var id: Int
+    var uuid: String
     var slug: String
     var title: String
     var topics: [Topic]?
