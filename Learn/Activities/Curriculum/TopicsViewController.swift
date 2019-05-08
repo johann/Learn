@@ -8,9 +8,10 @@
 
 import UIKit
 
-class TopicsViewController: UICollectionViewController {
+class TopicsViewController: UICollectionViewController, Storyboardable {
     let store = UserDataStore.shared
     var track: Track?
+    var coordinator: CurriculumCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,20 +47,6 @@ class TopicsViewController: UICollectionViewController {
             self.collectionView.reloadData()
         }
     }
-    
-    // MARK: Segue
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showUnits" {
-            guard let destination = segue.destination as? UnitsViewController, let indexPath = self.collectionView.indexPathsForSelectedItems?.first, let track = self.track, let topics = track.topics  else { return }
-            
-            let topic = topics[indexPath.row]
-            if let units = topic.units {
-                destination.configureUnits(units)
-            }
-            
-        }
-    }
 
     // MARK: UICollectionViewDataSource
     
@@ -80,5 +67,16 @@ class TopicsViewController: UICollectionViewController {
         
         return cell
     }
+   
 
+}
+
+// MARK: UICollectionViewDelegate
+extension TopicsViewController {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let track = self.store.track, let topics = track.topics {
+            let topic = topics[indexPath.row]
+            self.coordinator?.showTopic(topic)
+        }
+    }
 }

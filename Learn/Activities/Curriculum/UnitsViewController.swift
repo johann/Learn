@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UnitsViewController: UICollectionViewController {
+class UnitsViewController: UICollectionViewController, Storyboardable {
     var units = [Unit]()
     var selectedLesson: Lesson?
     

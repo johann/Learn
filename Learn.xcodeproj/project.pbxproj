@@ -41,6 +41,7 @@
 		C1FFF98E228343A6009C0D1E /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFF98D228343A6009C0D1E /* Storyboardable.swift */; };
 		C1FFF990228343C1009C0D1E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFF98F228343C1009C0D1E /* Coordinator.swift */; };
 		C1FFF992228343E8009C0D1E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFF991228343E8009C0D1E /* MainTabBarController.swift */; };
+		C1FFF995228345EE009C0D1E /* CurriculumCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFF994228345EE009C0D1E /* CurriculumCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		C1FFF98D228343A6009C0D1E /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
 		C1FFF98F228343C1009C0D1E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C1FFF991228343E8009C0D1E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		C1FFF994228345EE009C0D1E /* CurriculumCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumCoordinator.swift; sourceTree = "<group>"; };
 		E30683C953D33AF2B2989B6C /* Pods-Learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Learn/Pods-Learn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,7 +146,6 @@
 				C1B2F8192257911A00E97680 /* Views */,
 				C10C56CB21026D7400D903E8 /* Stores */,
 				C10C56C821026CB200D903E8 /* Utilities */,
-				C10C56C521026B1F00D903E8 /* Controllers */,
 				C10C56C421026B1900D903E8 /* Adapters */,
 				C10C56C321026B1200D903E8 /* Models */,
 				8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */,
@@ -179,16 +180,6 @@
 			path = Adapters;
 			sourceTree = "<group>";
 		};
-		C10C56C521026B1F00D903E8 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				8F40F1DD20FBB1FB0090C604 /* HomeViewController.swift */,
-				C10C56D7210282E300D903E8 /* Auth */,
-				C10C56D6210282D300D903E8 /* Lessons */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		C10C56C821026CB200D903E8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,14 +198,15 @@
 			path = Stores;
 			sourceTree = "<group>";
 		};
-		C10C56D6210282D300D903E8 /* Lessons */ = {
+		C10C56D6210282D300D903E8 /* Curriculum */ = {
 			isa = PBXGroup;
 			children = (
+				C1FFF994228345EE009C0D1E /* CurriculumCoordinator.swift */,
 				67156DB62267C470003BC44E /* TopicsViewController.swift */,
 				C1BEB0DC2271597700D22AF8 /* UnitsViewController.swift */,
 				C1BEB0E022722FB600D22AF8 /* LessonViewController.swift */,
 			);
-			path = Lessons;
+			path = Curriculum;
 			sourceTree = "<group>";
 		};
 		C10C56D7210282E300D903E8 /* Auth */ = {
@@ -248,8 +240,19 @@
 		C1FFF993228343FD009C0D1E /* Activities */ = {
 			isa = PBXGroup;
 			children = (
+				C10C56D7210282E300D903E8 /* Auth */,
+				C1FFF99622834737009C0D1E /* Home */,
+				C10C56D6210282D300D903E8 /* Curriculum */,
 			);
 			path = Activities;
+			sourceTree = "<group>";
+		};
+		C1FFF99622834737009C0D1E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8F40F1DD20FBB1FB0090C604 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		EADD015898FB5A62FBD69D18 /* Frameworks */ = {
@@ -376,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1FFF995228345EE009C0D1E /* CurriculumCoordinator.swift in Sources */,
 				6748541C22558AA900A33C5F /* Endpoint.swift in Sources */,
 				C1BEB0CF2270DA7F00D22AF8 /* Topic.swift in Sources */,
 				C1FFF992228343E8009C0D1E /* MainTabBarController.swift in Sources */,
