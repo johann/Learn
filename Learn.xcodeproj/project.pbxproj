@@ -17,8 +17,10 @@
 		67698DE9227FA66700982CF6 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67698DE8227FA66600982CF6 /* NetworkError.swift */; };
 		67698DEB227FA68100982CF6 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67698DEA227FA68100982CF6 /* WebService.swift */; };
 		67698DEF227FA92D00982CF6 /* LearnTrackCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67698DEE227FA92D00982CF6 /* LearnTrackCache.swift */; };
-		67BD6C312289957A00825CBF /* AdaptersTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD6C302289957A00825CBF /* AdaptersTestData.swift */; };
 		67BD6C33228995A500825CBF /* LearnApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD6C32228995A500825CBF /* LearnApiTest.swift */; };
+		67BD6C35228AE48B00825CBF /* curriculumFetchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 67BD6C34228AE48B00825CBF /* curriculumFetchData.json */; };
+		67BD6C38228AEC9400825CBF /* profileFetchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 67BD6C37228AEC9400825CBF /* profileFetchData.json */; };
+		67BD6C3A228AEEFE00825CBF /* emptyResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 67BD6C39228AEEFE00825CBF /* emptyResponse.json */; };
 		8F40F1DC20FBB1FB0090C604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */; };
 		8F40F1DE20FBB1FB0090C604 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40F1DD20FBB1FB0090C604 /* HomeViewController.swift */; };
 		8F40F1E120FBB1FB0090C604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F40F1DF20FBB1FB0090C604 /* Main.storyboard */; };
@@ -70,8 +72,10 @@
 		67698DEE227FA92D00982CF6 /* LearnTrackCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTrackCache.swift; sourceTree = "<group>"; };
 		67BD6C252289953300825CBF /* LearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67BD6C292289953400825CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		67BD6C302289957A00825CBF /* AdaptersTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptersTestData.swift; sourceTree = "<group>"; };
 		67BD6C32228995A500825CBF /* LearnApiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnApiTest.swift; sourceTree = "<group>"; };
+		67BD6C34228AE48B00825CBF /* curriculumFetchData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = curriculumFetchData.json; sourceTree = "<group>"; };
+		67BD6C37228AEC9400825CBF /* profileFetchData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profileFetchData.json; sourceTree = "<group>"; };
+		67BD6C39228AEEFE00825CBF /* emptyResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyResponse.json; sourceTree = "<group>"; };
 		8F40F1D820FBB1FB0090C604 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F40F1DD20FBB1FB0090C604 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -154,10 +158,20 @@
 		67BD6C2F2289954100825CBF /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
-				67BD6C302289957A00825CBF /* AdaptersTestData.swift */,
+				67BD6C36228AE4A000825CBF /* LearnAPITestData */,
 				67BD6C32228995A500825CBF /* LearnApiTest.swift */,
 			);
 			path = Adapters;
+			sourceTree = "<group>";
+		};
+		67BD6C36228AE4A000825CBF /* LearnAPITestData */ = {
+			isa = PBXGroup;
+			children = (
+				67BD6C39228AEEFE00825CBF /* emptyResponse.json */,
+				67BD6C37228AEC9400825CBF /* profileFetchData.json */,
+				67BD6C34228AE48B00825CBF /* curriculumFetchData.json */,
+			);
+			path = LearnAPITestData;
 			sourceTree = "<group>";
 		};
 		8F40F1CF20FBB1FB0090C604 = {
@@ -390,6 +404,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67BD6C38228AEC9400825CBF /* profileFetchData.json in Resources */,
+				67BD6C35228AE48B00825CBF /* curriculumFetchData.json in Resources */,
+				67BD6C3A228AEEFE00825CBF /* emptyResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +470,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67BD6C312289957A00825CBF /* AdaptersTestData.swift in Sources */,
 				67BD6C33228995A500825CBF /* LearnApiTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

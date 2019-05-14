@@ -1,0 +1,28 @@
+{
+    "id": 1,
+    "slug": "intro-to-data-science",
+    "title": "Intro to Data Science",
+    "uuid": "111-222-333",
+    "topics": [
+        {
+            "id": 2,
+            "slug": "regression",
+            "title": "Regression",
+            "units": [
+                {
+                    "id": 3,
+                    "slug": "least-squares-regression",
+                    "title": "Least Squares Regression",
+                    "lessons": [
+                        {
+                            "id": 4,
+                            "readme": "Readme for Least Squares Regression",
+                            "slug": "what-is-least-squares-regression",
+                            "title": "What is least squares regression?"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
