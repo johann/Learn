@@ -10,13 +10,19 @@ import XCTest
 
 @testable import Learn
 
+enum FileName: String {
+    case profileFetchData
+    case curriculumFetchData
+    case emptyResponse
+}
+
 class TestJSON {
     let data: Data?
     let decoder: JSONDecoder
     
-    init(_ fileName: String) {
+    init(_ fileName: FileName) {
         let bundle = Bundle(for: type(of: self))
-        let url = bundle.url(forResource: fileName, withExtension: "json")
+        let url = bundle.url(forResource: fileName.rawValue, withExtension: "json")
         self.data = try? Data(contentsOf: url!)
         self.decoder = JSONDecoder()
         self.decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -34,7 +40,7 @@ class LearnApiTest: XCTestCase {
     func test_LearnAPI_GetProfile_ReturnsStudent() {
         class WebServiceMock: WebService {
             override func request(_ endPoint: Endpoint, headers: [String: String], method: String = "GET", result: @escaping (Result<Data, Error>) -> Void) {
-                guard let data = TestJSON("profileFetchData").data else {
+                guard let data = TestJSON(.profileFetchData).data else {
                     XCTFail()
                     return
                 }
@@ -45,8 +51,11 @@ class LearnApiTest: XCTestCase {
         LearnApi(WebServiceMock()).getProfile("abc") { (result) in
             switch result {
             case .success(let student):
-                let testJSON = TestJSON("profileFetchData")
-                let studentStub = try! testJSON.decoder.decode(Student.self, from: testJSON.data!)
+                let testJSON = TestJSON(.profileFetchData)
+                guard let studentStub = try? testJSON.decoder.decode(Student.self, from: testJSON.data!) else {
+                    XCTFail("Unable to parse test JSON")
+                    return
+                }
                 let trackStub = studentStub.activeTrack
                 let batchStub = studentStub.activeBatch
                 let courseStub = studentStub.activeCourse
@@ -85,7 +94,7 @@ class LearnApiTest: XCTestCase {
     func test_LearnAPI_GetProfileWithMalformedJSON_ReturnsNetworkError() {
         class WebServiceMock: WebService {
             override func request(_ endPoint: Endpoint, headers: [String: String], method: String = "GET", result: @escaping (Result<Data, Error>) -> Void) {
-                guard let data = TestJSON("emptyResponse").data else {
+                guard let data = TestJSON(.emptyResponse).data else {
                     XCTFail()
                     return
                 }
@@ -149,7 +158,7 @@ class LearnApiTest: XCTestCase {
     func test_LearnAPI_GetCurriculum_ReturnsTrack() {
         class WebServiceMock: WebService {
             override func request(_ endPoint: Endpoint, headers: [String: String], method: String = "GET", result: @escaping (Result<Data, Error>) -> Void) {
-                guard let data = TestJSON("curriculumFetchData").data else {
+                guard let data = TestJSON(.curriculumFetchData).data else {
                     XCTFail()
                     return
                 }
@@ -160,14 +169,18 @@ class LearnApiTest: XCTestCase {
         LearnApi(WebServiceMock()).getCurriculum("abc", userId: 26, batchId: 11, trackId: 1) { (result) in
             switch result {
             case .success(let track):
-                let testJSON = TestJSON("curriculumFetchData")
-                let trackStub = try! testJSON.decoder.decode(Track.self, from: testJSON.data!)
-                let topicStub = trackStub.topics![0]
-                let unitStub = topicStub.units![0]
-                let lessonStub = unitStub.lessons![0]
-                let topic = track.topics![0]
-                let unit = topic.units![0]
-                let lesson = unit.lessons![0]
+                let testJSON = TestJSON(.curriculumFetchData)
+                guard let trackStub = try? testJSON.decoder.decode(Track.self, from: testJSON.data!),
+                    let topicStub = trackStub.topics?[0],
+                    let unitStub = topicStub.units?[0],
+                    let lessonStub = unitStub.lessons?[0],
+                    let topic = track.topics?[0],
+                    let unit = topic.units?[0],
+                    let lesson = unit.lessons?[0]
+                else {
+                    XCTFail()
+                    return
+                }
                 
                 XCTAssert(track.id == trackStub.id, "The Track's id should be: \(trackStub.id)")
                 XCTAssert(track.slug == trackStub.slug, "The Track's slug should be: \(trackStub.slug)")
@@ -193,7 +206,7 @@ class LearnApiTest: XCTestCase {
     func test_LearnAPI_GetCurriculumWithMalformedJSON_ReturnsNetworkError() {
         class WebServiceMock: WebService {
             override func request(_ endPoint: Endpoint, headers: [String: String], method: String = "GET", result: @escaping (Result<Data, Error>) -> Void) {
-                guard let data = TestJSON("emptyResponse").data else {
+                guard let data = TestJSON(.emptyResponse).data else {
                     XCTFail()
                     return
                 }
