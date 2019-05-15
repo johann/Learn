@@ -11,6 +11,7 @@ import UIKit
 class UnitsViewController: UICollectionViewController, Storyboardable {
     var units = [Unit]()
     var selectedLesson: Lesson?
+    var coordinator: CurriculumCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,15 +52,8 @@ extension UnitsViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "unitCell", for: indexPath) as? UnitCollectionViewCell else { return UICollectionViewCell(frame: .zero) }
         let unit = self.units[indexPath.row]
-        cell.lessonDelegate = self
+        cell.lessonDelegate = self.coordinator
         cell.configureCell(unit)
         return cell
-    }
-}
-
-// MARK: LessonDelegate
-extension UnitsViewController: LessonDelegate {
-    func selectLesson(_ lesson: Lesson) {
-        showLessonView(lesson: lesson)
     }
 }
