@@ -13,4 +13,13 @@ struct Topic: Curriculum, Codable {
     var slug: String
     var title: String
     var units: [Unit]?
+    
+    func isComplete() -> Bool {
+        guard let units = units else { return true }
+        let completedUnitCount = units.filter{ $0.isComplete() }.count
+        
+        if completedUnitCount == units.count { return true }
+        
+        return false
+    }
 }
