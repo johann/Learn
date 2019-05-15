@@ -17,6 +17,7 @@ class TopicsViewController: UICollectionViewController, Storyboardable {
         super.viewDidLoad()
         
         setupCollectionView()
+        self.title = self.track?.title
         
         if let _ = store.student {
             store.fetchCurriculum { (track) in

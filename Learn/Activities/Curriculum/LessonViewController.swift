@@ -9,7 +9,7 @@
 import UIKit
 import Down
 
-class LessonViewController: UIViewController {
+class LessonViewController: UIViewController, Storyboardable {
     @IBOutlet weak var navigationBar: UINavigationBar!
     
     var lesson: Lesson?
