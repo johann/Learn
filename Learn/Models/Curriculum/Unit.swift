@@ -12,4 +12,22 @@ struct Unit: Curriculum, Codable {
     var slug: String
     var title: String
     var lessons: [Lesson]?
+    
+    func isComplete() -> Bool {
+        guard let lessons = lessons else { return true }
+        
+        if lessons.count == 0 { return false }
+        
+        for lesson in lessons {
+            if !lesson.isComplete { return false }
+        }
+        
+        return true
+    }
+    
+    func completedLessonCount() -> Int {
+        guard let lessons = lessons else { return 0 }
+        
+        return lessons.filter{ $0.isComplete }.count
+    }
 }
