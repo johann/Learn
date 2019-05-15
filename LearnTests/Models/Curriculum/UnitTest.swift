@@ -47,16 +47,6 @@ final class UnitTest: XCTestCase {
         }
     }
     
-    func test_UnitInit_WithMissingReadmeAttr_ThrowsError() {
-        XCTAssertThrowsError(try JSONDecoder().decode(Lesson.self, from: unitDataMissingReadme)) { error in
-            if case .keyNotFound(let key, _)? = error as? DecodingError {
-                XCTAssertEqual("readme", key.stringValue)
-            } else {
-                XCTFail("Expected '.keyNotFound' for 'readme' but error was: \(error)")
-            }
-        }
-    }
-    
     // Mark .isComplete()
     func test_UnitIsComplete_WhenItHasNoLessons_ReturnsTrue() throws {
         let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithoutLessons)
@@ -114,40 +104,28 @@ private let unitDataWithoutLessons = Data("""
 {
     "id": 1,
     "slug": "intro-to-ds",
-    "title": "Intro to DS",
-    "readme": "test readme file"
+    "title": "Intro to DS"
 }
 """.utf8)
 
 private let unitDataMissingId = Data("""
 {
     "slug": "intro-to-ds",
-    "title": "Intro to DS",
-    "readme": "test readme file"
+    "title": "Intro to DS"
 }
 """.utf8)
 
 private let unitDataMissingSlug = Data("""
 {
     "id": 1,
-    "title": "Intro to DS",
-    "readme": "test readme file"
+    "title": "Intro to DS"
 }
 """.utf8)
 
 private let unitDataMissingTitle = Data("""
 {
     "id": 1,
-    "slug": "intro-to-ds",
-    "readme": "test readme file"
-}
-""".utf8)
-
-private let unitDataMissingReadme = Data("""
-{
-    "id": 1,
-    "slug": "intro-to-ds",
-    "title": "Intro to DS",
+    "slug": "intro-to-ds"
 }
 """.utf8)
 
@@ -156,7 +134,6 @@ private let unitDataWithCompletedLessons = Data("""
     "id": 1,
     "slug": "intro-to-ds",
     "title": "Intro to DS",
-    "readme": "test readme file",
     "lessons": [
         {
             "id": 1,
@@ -181,7 +158,6 @@ private let unitDataWithNoCompletedLessons = Data("""
     "id": 1,
     "slug": "intro-to-ds",
     "title": "Intro to DS",
-    "readme": "test readme file",
     "lessons": [
         {
             "id": 1,
@@ -204,7 +180,6 @@ private let unitDataWithSomeCompletedLessons = Data("""
     "id": 1,
     "slug": "intro-to-ds",
     "title": "Intro to DS",
-    "readme": "test readme file",
     "lessons": [
         {
             "id": 1,
