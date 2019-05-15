@@ -2,23 +2,27 @@ PODS:
   - Down (0.8.1)
   - Kingfisher (4.10.1)
   - OAuthSwift (1.3.0)
+  - SavannaKit (0.9.0)
 
 DEPENDENCIES:
   - Down
   - Kingfisher (~> 4.0)
   - OAuthSwift
+  - SavannaKit (~> 0.9)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Down
     - Kingfisher
     - OAuthSwift
+    - SavannaKit
 
 SPEC CHECKSUMS:
   Down: 3aa5ab1aee1a2ffff3c07291e9210dac5cc462cd
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   OAuthSwift: 7ef2f74cb570e1e30e2aeddc58fccc0f3891d057
+  SavannaKit: 920c240bde011900df8156200a960dad3ee5edfd
 
-PODFILE CHECKSUM: 0ec031f0bd1db5e0197b9d62889d6ecf662b3111
+PODFILE CHECKSUM: e9365ee1643ba48c036e2494a3bda1a3b2aa01f5
 
 COCOAPODS: 1.6.1
