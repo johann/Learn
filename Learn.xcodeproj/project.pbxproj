@@ -31,6 +31,9 @@
 		C10C56CD21026D8100D903E8 /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56CC21026D8100D903E8 /* UserDataStore.swift */; };
 		C10C56CF21026E6700D903E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56CE21026E6700D903E8 /* Constants.swift */; };
 		C10C56D121027A3A00D903E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C56D021027A3A00D903E8 /* LoginViewController.swift */; };
+		C12DAE62228C79F6003E2FE9 /* CollapsibleTableSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE60228C79F6003E2FE9 /* CollapsibleTableSectionViewController.swift */; };
+		C12DAE63228C79F6003E2FE9 /* CollapsibleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE61228C79F6003E2FE9 /* CollapsibleTableViewHeader.swift */; };
+		C12DAE65228C7A83003E2FE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE64228C7A83003E2FE9 /* ViewController.swift */; };
 		C18235C320FFB71700244E27 /* LearnApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18235C220FFB71700244E27 /* LearnApi.swift */; };
 		C19121312268F9CE0065601A /* Learn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C191212F2268F9CE0065601A /* Learn.xcdatamodeld */; };
 		C198B3DD226206A70036282B /* LessonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C198B3DC226206A70036282B /* LessonViewCell.swift */; };
@@ -88,6 +91,9 @@
 		C10C56CC21026D8100D903E8 /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
 		C10C56CE21026E6700D903E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C10C56D021027A3A00D903E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C12DAE60228C79F6003E2FE9 /* CollapsibleTableSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleTableSectionViewController.swift; sourceTree = "<group>"; };
+		C12DAE61228C79F6003E2FE9 /* CollapsibleTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleTableViewHeader.swift; sourceTree = "<group>"; };
+		C12DAE64228C7A83003E2FE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C18235C220FFB71700244E27 /* LearnApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnApi.swift; sourceTree = "<group>"; };
 		C19121302268F9CE0065601A /* Learn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Learn.xcdatamodel; sourceTree = "<group>"; };
 		C198B3DC226206A70036282B /* LessonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewCell.swift; sourceTree = "<group>"; };
@@ -197,6 +203,7 @@
 		8F40F1DA20FBB1FB0090C604 /* Learn */ = {
 			isa = PBXGroup;
 			children = (
+				C12DAE5F228C79DC003E2FE9 /* Vendor */,
 				C1FFF993228343FD009C0D1E /* Activities */,
 				C1FFF98C22834385009C0D1E /* Protocols */,
 				C191212F2268F9CE0065601A /* Learn.xcdatamodeld */,
@@ -255,15 +262,14 @@
 			path = Stores;
 			sourceTree = "<group>";
 		};
-		C10C56D6210282D300D903E8 /* Curriculum */ = {
+		C10C56D6210282D300D903E8 /* [Deprecated] Curriculum */ = {
 			isa = PBXGroup;
 			children = (
-				C1FFF994228345EE009C0D1E /* CurriculumCoordinator.swift */,
 				67156DB62267C470003BC44E /* TopicsViewController.swift */,
 				C1BEB0DC2271597700D22AF8 /* UnitsViewController.swift */,
 				C1BEB0E022722FB600D22AF8 /* LessonViewController.swift */,
 			);
-			path = Curriculum;
+			path = "[Deprecated] Curriculum";
 			sourceTree = "<group>";
 		};
 		C10C56D7210282E300D903E8 /* Auth */ = {
@@ -272,6 +278,24 @@
 				C10C56D021027A3A00D903E8 /* LoginViewController.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		C12DAE5F228C79DC003E2FE9 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				C12DAE60228C79F6003E2FE9 /* CollapsibleTableSectionViewController.swift */,
+				C12DAE61228C79F6003E2FE9 /* CollapsibleTableViewHeader.swift */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		C12DAE66228C8C73003E2FE9 /* Curiculum */ = {
+			isa = PBXGroup;
+			children = (
+				C12DAE64228C7A83003E2FE9 /* ViewController.swift */,
+				C1FFF994228345EE009C0D1E /* CurriculumCoordinator.swift */,
+			);
+			path = Curiculum;
 			sourceTree = "<group>";
 		};
 		C1B2F8192257911A00E97680 /* Views */ = {
@@ -297,9 +321,10 @@
 		C1FFF993228343FD009C0D1E /* Activities */ = {
 			isa = PBXGroup;
 			children = (
+				C12DAE66228C8C73003E2FE9 /* Curiculum */,
 				C10C56D7210282E300D903E8 /* Auth */,
 				C1FFF99622834737009C0D1E /* Home */,
-				C10C56D6210282D300D903E8 /* Curriculum */,
+				C10C56D6210282D300D903E8 /* [Deprecated] Curriculum */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -448,12 +473,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Learn/Pods-Learn-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BTNavigationDropdownMenu/BTNavigationDropdownMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BTNavigationDropdownMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
@@ -479,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1FFF995228345EE009C0D1E /* CurriculumCoordinator.swift in Sources */,
+				C12DAE63228C79F6003E2FE9 /* CollapsibleTableViewHeader.swift in Sources */,
 				6748541C22558AA900A33C5F /* Endpoint.swift in Sources */,
 				C1BEB0CF2270DA7F00D22AF8 /* Topic.swift in Sources */,
 				C1FFF992228343E8009C0D1E /* MainTabBarController.swift in Sources */,
@@ -490,6 +518,7 @@
 				C1BEB0D92270DE4000D22AF8 /* Curriculum.swift in Sources */,
 				67156DBA2267C7F8003BC44E /* Track.swift in Sources */,
 				C19121312268F9CE0065601A /* Learn.xcdatamodeld in Sources */,
+				C12DAE62228C79F6003E2FE9 /* CollapsibleTableSectionViewController.swift in Sources */,
 				C10C56CA21026CC100D903E8 /* Switcher.swift in Sources */,
 				67156DBC2267E000003BC44E /* TopicCollectionViewCell.swift in Sources */,
 				67698DEF227FA92D00982CF6 /* LearnTrackCache.swift in Sources */,
@@ -502,6 +531,7 @@
 				C1BEB0E122722FB600D22AF8 /* LessonViewController.swift in Sources */,
 				67698DEB227FA68100982CF6 /* WebService.swift in Sources */,
 				C1BEB0DF227160B100D22AF8 /* UnitCollectionViewCell.swift in Sources */,
+				C12DAE65228C7A83003E2FE9 /* ViewController.swift in Sources */,
 				C10C56D121027A3A00D903E8 /* LoginViewController.swift in Sources */,
 				C10C56CF21026E6700D903E8 /* Constants.swift in Sources */,
 				8F40F1DE20FBB1FB0090C604 /* HomeViewController.swift in Sources */,

@@ -14,7 +14,7 @@ public enum Endpoint {
     case curriculum(Int, Int, Int)
     var apiBase: String {
         get {
-            return Constants.qaLearnHost
+            return Constants.localHost
         }
     }
     
