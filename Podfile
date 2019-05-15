@@ -9,4 +9,5 @@ target 'Learn' do
   pod 'OAuthSwift'
   pod 'Kingfisher', '~> 4.0'
   pod 'Down'
+  pod 'BTNavigationDropdownMenu'
 end

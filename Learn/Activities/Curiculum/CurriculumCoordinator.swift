@@ -13,13 +13,16 @@ class CurriculumCoordinator: Coordinator {
 
     init(navigationController: UINavigationController = .init()) {
         self.navigationController = navigationController
-        self.navigationController.navigationBar.prefersLargeTitles = true
+//        self.navigationController.navigationBar.prefersLargeTitles = true
         
-        let topicVC = TopicsViewController.instantiate()
-        topicVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "literature"), tag: 0)
-        topicVC.coordinator = self
+//        let topicVC = TopicsViewController.instantiate()
+//        topicVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "literature"), tag: 0)
+//        topicVC.coordinator = self
         
-        navigationController.viewControllers = [topicVC]
+        
+        let vc = ViewController.instantiate()
+        
+        navigationController.viewControllers = [vc]
     }
     
     

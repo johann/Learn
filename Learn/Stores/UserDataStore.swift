@@ -14,8 +14,8 @@ final class UserDataStore {
     var student: Student?
     var track: Track?
     var token: String {
-        guard let token = UserDefaults.standard.string(forKey: "token") else { fatalError("Token not found") }
-        return token
+//        guard let token = UserDefaults.standard.string(forKey: "token") else { fatalError("Token not found") }
+        return "27c136770c55d8e66f4aff9fdb4e879abdab6385b4ce035ca004906baf74f1fb"
     }
     
     fileprivate init() {}
@@ -41,12 +41,12 @@ final class UserDataStore {
             if track.uuid == student.activeTrack.uuid {
                 self.track = track
                 completion(track)
+                
                 return
             } else {
                 LearnTrackCache().remove(track.uuid)
             }
         }
-        
         LearnApi().getCurriculum(
             token,
             userId: student.id,
