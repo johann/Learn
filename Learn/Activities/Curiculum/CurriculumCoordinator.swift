@@ -13,7 +13,6 @@ class CurriculumCoordinator: Coordinator {
 
     init(navigationController: UINavigationController = .init()) {
         self.navigationController = navigationController
-        self.navigationController.navigationBar.prefersLargeTitles = true
 
         let topicVC = TopicViewController.instantiate()
         topicVC.tabBarItem = UITabBarItem(title: "Lessons", image: UIImage(named: "lessons-inactive"), tag: 0)
