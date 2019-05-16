@@ -21,7 +21,6 @@
 		6784F034228DB4720043CE0C /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6784F033228DB4720043CE0C /* BookmarksViewController.swift */; };
 		6784F039228DB9B20043CE0C /* QuizzesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6784F038228DB9B20043CE0C /* QuizzesCoordinator.swift */; };
 		6784F03B228DBA360043CE0C /* QuizzesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6784F03A228DBA360043CE0C /* QuizzesViewController.swift */; };
-		6784F042228DC9F90043CE0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6784F041228DC9F90043CE0C /* Constants.swift */; };
 		67BD6C33228995A500825CBF /* LearnApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD6C32228995A500825CBF /* LearnApiTest.swift */; };
 		67BD6C35228AE48B00825CBF /* curriculumFetchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 67BD6C34228AE48B00825CBF /* curriculumFetchData.json */; };
 		67BD6C38228AEC9400825CBF /* profileFetchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 67BD6C37228AEC9400825CBF /* profileFetchData.json */; };
@@ -43,6 +42,7 @@
 		C12DAE68228CB417003E2FE9 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE67228CB417003E2FE9 /* LessonCell.swift */; };
 		C12DAE6A228CB42C003E2FE9 /* UnitViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE69228CB42C003E2FE9 /* UnitViewCell.swift */; };
 		C12DAE6E228DA4EA003E2FE9 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE6D228DA4EA003E2FE9 /* Identifiable.swift */; };
+		C12DAE70228DCC56003E2FE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE6F228DCC56003E2FE9 /* Constants.swift */; };
 		C18235C320FFB71700244E27 /* LearnApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18235C220FFB71700244E27 /* LearnApi.swift */; };
 		C19121312268F9CE0065601A /* Learn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C191212F2268F9CE0065601A /* Learn.xcdatamodeld */; };
 		C198B3DD226206A70036282B /* LessonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C198B3DC226206A70036282B /* LessonViewCell.swift */; };
@@ -85,7 +85,6 @@
 		6784F033228DB4720043CE0C /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		6784F038228DB9B20043CE0C /* QuizzesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesCoordinator.swift; sourceTree = "<group>"; };
 		6784F03A228DBA360043CE0C /* QuizzesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesViewController.swift; sourceTree = "<group>"; };
-		6784F041228DC9F90043CE0C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		67BD6C252289953300825CBF /* LearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67BD6C292289953400825CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67BD6C32228995A500825CBF /* LearnApiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnApiTest.swift; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		C12DAE67228CB417003E2FE9 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
 		C12DAE69228CB42C003E2FE9 /* UnitViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitViewCell.swift; sourceTree = "<group>"; };
 		C12DAE6D228DA4EA003E2FE9 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		C12DAE6F228DCC56003E2FE9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C18235C220FFB71700244E27 /* LearnApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnApi.swift; sourceTree = "<group>"; };
 		C19121302268F9CE0065601A /* Learn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Learn.xcdatamodel; sourceTree = "<group>"; };
 		C198B3DC226206A70036282B /* LessonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewCell.swift; sourceTree = "<group>"; };
@@ -283,7 +283,7 @@
 			children = (
 				C10C56C921026CC100D903E8 /* Switcher.swift */,
 				67BD6C45228C4FAB00825CBF /* LearnColor.swift */,
-				6784F041228DC9F90043CE0C /* Constants.swift */,
+				C12DAE6F228DCC56003E2FE9 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -556,7 +556,7 @@
 				C10C56CD21026D8100D903E8 /* UserDataStore.swift in Sources */,
 				8D89BA55228DA9AA00FE9118 /* ProfileCoordinator.swift in Sources */,
 				67156DB72267C470003BC44E /* TopicsViewController.swift in Sources */,
-				6784F042228DC9F90043CE0C /* Constants.swift in Sources */,
+				C12DAE70228DCC56003E2FE9 /* Constants.swift in Sources */,
 				C1BEB0D92270DE4000D22AF8 /* Curriculum.swift in Sources */,
 				67156DBA2267C7F8003BC44E /* Track.swift in Sources */,
 				C19121312268F9CE0065601A /* Learn.xcdatamodeld in Sources */,

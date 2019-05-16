@@ -85,8 +85,10 @@ extension TopicViewController: CollapsibleTableSectionDelegate {
     }
     
     func collapsibleTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: UnitViewCell = tableView.dequeueReusableCell(withIdentifier: UnitViewCell.identifier()) as? UnitViewCell else { return UnitViewCell(style: .default, reuseIdentifier: UnitViewCell.identifier())}
         
+        guard let cell: UnitViewCell = tableView.dequeueReusableCell(withIdentifier: UnitViewCell.identifier()) as? UnitViewCell else { print("Hello"); return UnitViewCell(style: .default, reuseIdentifier: UnitViewCell.identifier())}
+        
+        cell.containerFrame = Double(self.view.frame.width)
         cell.lessonDelegate = self.coordinator
         if let units = self.units {
             let unit = units[indexPath.section]
