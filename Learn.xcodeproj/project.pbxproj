@@ -37,7 +37,6 @@
 		C12DAE65228C7A83003E2FE9 /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE64228C7A83003E2FE9 /* TopicViewController.swift */; };
 		C12DAE68228CB417003E2FE9 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE67228CB417003E2FE9 /* LessonCell.swift */; };
 		C12DAE6A228CB42C003E2FE9 /* UnitViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE69228CB42C003E2FE9 /* UnitViewCell.swift */; };
-		C12DAE6C228CFD55003E2FE9 /* CenteredCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE6B228CFD55003E2FE9 /* CenteredCollectionViewLayout.swift */; };
 		C12DAE6E228DA4EA003E2FE9 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE6D228DA4EA003E2FE9 /* Identifiable.swift */; };
 		C18235C320FFB71700244E27 /* LearnApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18235C220FFB71700244E27 /* LearnApi.swift */; };
 		C19121312268F9CE0065601A /* Learn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C191212F2268F9CE0065601A /* Learn.xcdatamodeld */; };
@@ -101,7 +100,6 @@
 		C12DAE64228C7A83003E2FE9 /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
 		C12DAE67228CB417003E2FE9 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
 		C12DAE69228CB42C003E2FE9 /* UnitViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitViewCell.swift; sourceTree = "<group>"; };
-		C12DAE6B228CFD55003E2FE9 /* CenteredCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredCollectionViewLayout.swift; sourceTree = "<group>"; };
 		C12DAE6D228DA4EA003E2FE9 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		C18235C220FFB71700244E27 /* LearnApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnApi.swift; sourceTree = "<group>"; };
 		C19121302268F9CE0065601A /* Learn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Learn.xcdatamodel; sourceTree = "<group>"; };
@@ -292,7 +290,6 @@
 			children = (
 				C12DAE60228C79F6003E2FE9 /* CollapsibleTableSectionViewController.swift */,
 				C12DAE61228C79F6003E2FE9 /* CollapsibleTableViewHeader.swift */,
-				C12DAE6B228CFD55003E2FE9 /* CenteredCollectionViewLayout.swift */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -527,7 +524,6 @@
 				C10C56CD21026D8100D903E8 /* UserDataStore.swift in Sources */,
 				67156DB72267C470003BC44E /* TopicsViewController.swift in Sources */,
 				C1BEB0D92270DE4000D22AF8 /* Curriculum.swift in Sources */,
-				C12DAE6C228CFD55003E2FE9 /* CenteredCollectionViewLayout.swift in Sources */,
 				67156DBA2267C7F8003BC44E /* Track.swift in Sources */,
 				C19121312268F9CE0065601A /* Learn.xcdatamodeld in Sources */,
 				C12DAE62228C79F6003E2FE9 /* CollapsibleTableSectionViewController.swift in Sources */,
