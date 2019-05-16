@@ -63,7 +63,7 @@ extension LearnColor: CaseIterable {
     
     static var allCases: [LearnColor] {
         // TODO Add Additional Cases for colors needed for randomization
-        return [.black, .white, .grey, .yellow, .orange, .red, .blue, .navyDark, .purple, .green, .aquaGreen, .gold]
+        return [.grey, .yellow, .orange, .red, .blue, .purpleLighter, .purple, .green, .aquaGreen, .gold]
     }
     
     static var random: LearnColor {
