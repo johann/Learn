@@ -27,7 +27,22 @@ class CurriculumCoordinator: Coordinator {
         lessonVC.configureLesson(lesson)
         let navigationController = UINavigationController()
         navigationController.viewControllers = [lessonVC]
+        let closeBtn = UIBarButtonItem(image: UIImage(named: "close_icon"), style: .plain, target: self, action: #selector(close))
+        let saveBtn = UIBarButtonItem(image: UIImage(named: "bookmark_saved"), style: .plain, target: self, action: #selector(save))
+        navigationController.navigationBar.tintColor = UIColor.black
+        
+        lessonVC.navigationItem.leftBarButtonItem = closeBtn
+        lessonVC.navigationItem.rightBarButtonItem = saveBtn
+        
         self.navigationController.present(navigationController, animated: true, completion: nil)
+    }
+    
+    @objc func save() {
+        
+    }
+    
+    @objc func close() {
+        self.navigationController.dismiss(animated: true, completion: nil)
     }
 }
 
