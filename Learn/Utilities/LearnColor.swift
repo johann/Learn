@@ -65,6 +65,10 @@ extension LearnColor: CaseIterable {
         // TODO Add Additional Cases for colors needed for randomization
         return [.black, .white, .grey, .yellow, .orange, .red, .blue, .navyDark, .purple, .green, .aquaGreen, .gold]
     }
+    
+    static var random: LearnColor {
+        return allCases.randomElement() ?? .blue
+    }
 }
 
 // MARK LearnColor Value Setting

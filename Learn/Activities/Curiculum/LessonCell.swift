@@ -17,7 +17,7 @@ class LessonCell: UICollectionViewCell, Identifiable {
         self.addSubview(lessonLabel)
         self.lessonLabel.translatesAutoresizingMaskIntoConstraints = false
         self.lessonLabel.lineBreakMode = .byWordWrapping
-        self.backgroundColor = LearnColor.blue.value
+        self.backgroundColor = LearnColor.random.value
         self.lessonLabel.textColor = UIColor.white
         self.lessonLabel.numberOfLines = 0
         NSLayoutConstraint.activate([
