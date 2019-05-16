@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="1134" y="-143"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="RYg-Si-FPh">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="aPm-g8-d3k" customClass="HomeViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="aPm-g8-d3k" customClass="ProfileViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TXQ-6b-Mhs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
