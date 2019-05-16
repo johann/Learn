@@ -73,7 +73,7 @@ final class UnitTest: XCTestCase {
     }
     
     // MARK .completedLessonsCount
-    func test_UnitCompletedLessonCount_WhenItHasNoLessons_Returns0() throws {
+    func test_UnitCompletedLessonCount_WhenItHasNoLessons_ReturnsZero() throws {
         let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithoutLessons)
         
         XCTAssert(sut.completedLessonCount == 0, ".completedLessonCount() should be `0` if there are no associated lessons")
@@ -86,7 +86,7 @@ final class UnitTest: XCTestCase {
         XCTAssert(sut.completedLessonCount == lessonCount, ".completedLessonCount() should be \(String(describing: lessonCount)) when all lessons are completed")
     }
     
-    func test_UnitCompletedLessonCount_WhenNoLessonsAreCompleted_Returns0() throws {
+    func test_UnitCompletedLessonCount_WhenNoLessonsAreCompleted_ReturnsZero() throws {
         let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithNoCompletedLessons)
         
         XCTAssert(sut.completedLessonCount == 0, ".completedLessonCount() should be `0` false if no lessons are completed")

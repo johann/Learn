@@ -14,11 +14,19 @@ struct Topic: Curriculum, Codable {
     var title: String
     var units: [Unit]?
     var isComplete: Bool {
-        guard let units = units else { return true }
-        let completedUnitCount = units.filter{ $0.isComplete }.count
+       return lessonCount == lessonCompletionCount
+    }
+    var lessonCount: Int {
+        guard let units = units else { return 0 }
         
-        if completedUnitCount == units.count { return true }
+        return units.reduce(0, { acc, unit in
+            let lessons = unit.lessons ?? []
+            return acc + lessons.count
+        })
+    }
+    var lessonCompletionCount: Int {
+        guard let units = units else { return 0 }
         
-        return false
+        return units.reduce(0, { acc, unit in acc + unit.completedLessonCount })
     }
 }
