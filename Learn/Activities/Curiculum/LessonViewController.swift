@@ -13,8 +13,7 @@ class LessonViewController: UIViewController, Storyboardable {
     var lesson: Lesson?
     var completeBtn = UIButton()
     var markDownView: DownView!
-    
-    var delegate: LessonComplete?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

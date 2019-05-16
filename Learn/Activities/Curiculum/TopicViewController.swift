@@ -34,13 +34,7 @@ class TopicViewController: CollapsibleTableSectionViewController, Storyboardable
             }
         }
     }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print(self.units?.first?.lessons)
-        self.tableview.reloadData()
-    }
+
     
     func reloadView() {
         DispatchQueue.main.async {
@@ -92,7 +86,7 @@ extension TopicViewController: CollapsibleTableSectionDelegate {
     
     func collapsibleTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell: UnitViewCell = tableView.dequeueReusableCell(withIdentifier: UnitViewCell.identifier()) as? UnitViewCell else { print("Hello"); return UnitViewCell(style: .default, reuseIdentifier: UnitViewCell.identifier())}
+        guard let cell: UnitViewCell = tableView.dequeueReusableCell(withIdentifier: UnitViewCell.identifier()) as? UnitViewCell else { return UnitViewCell(style: .default, reuseIdentifier: UnitViewCell.identifier())}
         
         cell.containerFrame = Double(self.view.frame.width)
         cell.lessonDelegate = self.coordinator

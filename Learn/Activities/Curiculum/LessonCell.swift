@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol LessonComplete {
-    func completeLesson(lesson: Lesson)
-}
-
 class LessonCell: UICollectionViewCell, Identifiable {
     
     var lessonLabel = UILabel()
