@@ -36,7 +36,6 @@
 		C18235C320FFB71700244E27 /* LearnApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18235C220FFB71700244E27 /* LearnApi.swift */; };
 		C19121312268F9CE0065601A /* Learn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C191212F2268F9CE0065601A /* Learn.xcdatamodeld */; };
 		C198B3DD226206A70036282B /* LessonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C198B3DC226206A70036282B /* LessonViewCell.swift */; };
-		C1B2F81D225794C100E97680 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2F81C225794C100E97680 /* ColorHelper.swift */; };
 		C1BEB0CF2270DA7F00D22AF8 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BEB0CE2270DA7F00D22AF8 /* Topic.swift */; };
 		C1BEB0D32270DA9700D22AF8 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BEB0D22270DA9700D22AF8 /* Lesson.swift */; };
 		C1BEB0D92270DE4000D22AF8 /* Curriculum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BEB0D82270DE4000D22AF8 /* Curriculum.swift */; };
@@ -78,8 +77,8 @@
 		67BD6C34228AE48B00825CBF /* curriculumFetchData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = curriculumFetchData.json; sourceTree = "<group>"; };
 		67BD6C37228AEC9400825CBF /* profileFetchData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profileFetchData.json; sourceTree = "<group>"; };
 		67BD6C39228AEEFE00825CBF /* emptyResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyResponse.json; sourceTree = "<group>"; };
-		8D89BA54228DA9AA00FE9118 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		67BD6C45228C4FAB00825CBF /* LearnColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnColor.swift; sourceTree = "<group>"; };
+		8D89BA54228DA9AA00FE9118 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		8F40F1D820FBB1FB0090C604 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F40F1DD20FBB1FB0090C604 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +94,6 @@
 		C18235C220FFB71700244E27 /* LearnApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnApi.swift; sourceTree = "<group>"; };
 		C19121302268F9CE0065601A /* Learn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Learn.xcdatamodel; sourceTree = "<group>"; };
 		C198B3DC226206A70036282B /* LessonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewCell.swift; sourceTree = "<group>"; };
-		C1B2F81C225794C100E97680 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		C1BEB0CE2270DA7F00D22AF8 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		C1BEB0D22270DA9700D22AF8 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		C1BEB0D82270DE4000D22AF8 /* Curriculum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curriculum.swift; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 			children = (
 				C10C56C921026CC100D903E8 /* Switcher.swift */,
 				C10C56CE21026E6700D903E8 /* Constants.swift */,
-				C1B2F81C225794C100E97680 /* ColorHelper.swift */,
 				67BD6C45228C4FAB00825CBF /* LearnColor.swift */,
 			);
 			path = Utilities;
@@ -489,7 +486,6 @@
 				C1BEB0CF2270DA7F00D22AF8 /* Topic.swift in Sources */,
 				C1FFF992228343E8009C0D1E /* MainTabBarController.swift in Sources */,
 				C1BEB0DD2271597700D22AF8 /* UnitsViewController.swift in Sources */,
-				C1B2F81D225794C100E97680 /* ColorHelper.swift in Sources */,
 				6709868222545EF6009E0BAE /* Course.swift in Sources */,
 				C10C56CD21026D8100D903E8 /* UserDataStore.swift in Sources */,
 				8D89BA55228DA9AA00FE9118 /* ProfileCoordinator.swift in Sources */,

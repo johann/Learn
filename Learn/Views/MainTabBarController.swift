@@ -14,7 +14,7 @@ class MainTabBarController: UITabBarController, Storyboardable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.tintColor = UIColor.black
+        self.tabBar.tintColor = LearnColor.black.value
   
         viewControllers = [curriculum.navigationController, profile.navigationController]
     }

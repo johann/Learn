@@ -16,7 +16,7 @@ class ProfileCoordinator: Coordinator {
         self.navigationController.navigationBar.prefersLargeTitles = true
         
         let profileVC = ProfileViewController.instantiate()
-        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "literature"), tag: 0)
+        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "profile-inactive"), tag: 0)
         profileVC.coordinator = self
         
         navigationController.viewControllers = [profileVC]
