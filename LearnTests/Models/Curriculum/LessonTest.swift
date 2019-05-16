@@ -60,6 +60,14 @@ final class LessonTest: XCTestCase {
         
         XCTAssert(sut.isComplete == false, "Lesson '.isComplete' should be 'true' when not defined")
     }
+    
+    // MARK .complete()
+    func test_LessonComplete_SetsIsCompleteAsTrue() throws {
+        var sut = try JSONDecoder().decode(Lesson.self, from: lessonDataIsNotComplete)
+        sut.complete()
+        
+        XCTAssertTrue(sut.isComplete, "Lesson '.isComplete' should be 'true' when lesson was completed")
+    }
 }
 
 private let lessonDataMissingIsComplete = Data("""
@@ -100,5 +108,15 @@ private let lessonDataMissingReadme = Data("""
     "id": 1,
     "slug": "functions",
     "title": "Functions"
+}
+""".utf8)
+
+private let lessonDataIsNotComplete = Data("""
+{
+    "id": 1,
+    "slug": "functions",
+    "title": "Functions",
+    "readme": "test readme file",
+    "isNotComplete": false
 }
 """.utf8)

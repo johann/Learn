@@ -31,4 +31,8 @@ struct Lesson: Curriculum, Codable {
         readme = try values.decode(String.self, forKey: .readme)
         isComplete = try values.decodeIfPresent(Bool.self, forKey: .isComplete) ?? false
     }
+    
+    mutating func complete() {
+        isComplete = true
+    }
 }
