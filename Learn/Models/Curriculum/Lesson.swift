@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Lesson: Curriculum, Codable, Equatable {
+class Lesson: Curriculum, Codable, CustomStringConvertible {
     var id: Int
     var slug: String
     var title: String
@@ -23,7 +23,7 @@ struct Lesson: Curriculum, Codable, Equatable {
         case isComplete = "isComplete"
     }
     
-    public init(from decoder: Decoder) throws {
+    required public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decode(Int.self, forKey: .id)
         slug = try values.decode(String.self, forKey: .slug)
@@ -32,7 +32,18 @@ struct Lesson: Curriculum, Codable, Equatable {
         isComplete = try values.decodeIfPresent(Bool.self, forKey: .isComplete) ?? false
     }
     
-    mutating func complete() {
+    func complete() {
         isComplete = true
+    }
+    
+    var description: String {
+        return "\(self.id) - \(self.slug) - \(self.title) - \(self.isComplete) "
+    }
+}
+
+
+extension Lesson: Equatable {
+    static func == (lhs: Lesson, rhs: Lesson) -> Bool {
+        return lhs.slug == rhs.slug
     }
 }

@@ -25,10 +25,10 @@
 		67BD6C35228AE48B00825CBF /* curriculumFetchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 67BD6C34228AE48B00825CBF /* curriculumFetchData.json */; };
 		67BD6C38228AEC9400825CBF /* profileFetchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 67BD6C37228AEC9400825CBF /* profileFetchData.json */; };
 		67BD6C3A228AEEFE00825CBF /* emptyResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 67BD6C39228AEEFE00825CBF /* emptyResponse.json */; };
+		67BD6C46228C4FAB00825CBF /* LearnColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD6C45228C4FAB00825CBF /* LearnColor.swift */; };
 		67BD6C4A228C9E6200825CBF /* LessonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD6C49228C9E6200825CBF /* LessonTest.swift */; };
 		67BD6C4C228CA7A700825CBF /* UnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD6C4B228CA7A700825CBF /* UnitTest.swift */; };
 		67BD6C4E228CB1EC00825CBF /* TopicTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD6C4D228CB1EC00825CBF /* TopicTest.swift */; };
-		67BD6C46228C4FAB00825CBF /* LearnColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD6C45228C4FAB00825CBF /* LearnColor.swift */; };
 		8D89BA55228DA9AA00FE9118 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D89BA54228DA9AA00FE9118 /* ProfileCoordinator.swift */; };
 		8F40F1DC20FBB1FB0090C604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */; };
 		8F40F1DE20FBB1FB0090C604 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40F1DD20FBB1FB0090C604 /* ProfileViewController.swift */; };
@@ -94,10 +94,10 @@
 		67BD6C34228AE48B00825CBF /* curriculumFetchData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = curriculumFetchData.json; sourceTree = "<group>"; };
 		67BD6C37228AEC9400825CBF /* profileFetchData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profileFetchData.json; sourceTree = "<group>"; };
 		67BD6C39228AEEFE00825CBF /* emptyResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyResponse.json; sourceTree = "<group>"; };
+		67BD6C45228C4FAB00825CBF /* LearnColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnColor.swift; sourceTree = "<group>"; };
 		67BD6C49228C9E6200825CBF /* LessonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTest.swift; sourceTree = "<group>"; };
 		67BD6C4B228CA7A700825CBF /* UnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTest.swift; sourceTree = "<group>"; };
 		67BD6C4D228CB1EC00825CBF /* TopicTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTest.swift; sourceTree = "<group>"; };
-		67BD6C45228C4FAB00825CBF /* LearnColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnColor.swift; sourceTree = "<group>"; };
 		8D89BA54228DA9AA00FE9118 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		8F40F1D820FBB1FB0090C604 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -821,7 +821,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.johannkerr.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johannkerr.LearnGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -840,7 +840,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.johannkerr.Learn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johannkerr.LearnGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -36,6 +36,12 @@ class TopicViewController: CollapsibleTableSectionViewController, Storyboardable
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(self.units?.first?.lessons)
+        self.tableview.reloadData()
+    }
+    
     func reloadView() {
         DispatchQueue.main.async {
             self.configureMenu()
@@ -110,8 +116,8 @@ extension TopicViewController: CollapsibleTableSectionDelegate {
     func collapsibleTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let units = self.units else { return "" }
         let unit = units[section]
-     
-        return unit.title
+        guard let lessons = unit.lessons else { return "" }
+        return "\(unit.title) - (\(lessons.count))"
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

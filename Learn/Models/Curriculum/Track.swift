@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Track: Curriculum, Codable {
+class Track: Curriculum, Codable {
     var id: Int
     var uuid: String
     var slug: String
@@ -35,5 +35,9 @@ struct Track: Curriculum, Codable {
             
             return lessons.map { (lesson) in lesson }
         }
+    }
+    
+    var randomLessons: [Lesson] {
+        return [lessons.randomElement()!, lessons.randomElement()!, lessons.randomElement()!]
     }
 }
