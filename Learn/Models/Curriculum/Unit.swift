@@ -12,6 +12,12 @@ struct Unit: Curriculum, Codable {
     var slug: String
     var title: String
     var lessons: [Lesson]?
+    var currentLesson: Lesson? {
+        guard let lessons = lessons else { return nil }
+        guard let currentLesson = lessons.first(where: { !$0.isComplete }) else { return nil }
+        
+        return currentLesson
+    }
     var isComplete: Bool {
         guard let lessons = lessons else { return true }
             

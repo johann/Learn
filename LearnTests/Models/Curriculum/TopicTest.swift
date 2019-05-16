@@ -229,18 +229,18 @@ private let topicDataSomeUnitLessonsCompleted = Data("""
             "title": "Intro to DS",
             "lessons": [
                 {
-                "id": 1,
-                "slug": "functions",
-                "title": "Functions",
-                "readme": "test readme file",
-                "isComplete": true
+                    "id": 1,
+                    "slug": "functions",
+                    "title": "Functions",
+                    "readme": "test readme file",
+                    "isComplete": true
                 },
                 {
-                "id": 2,
-                "slug": "arrays",
-                "title": "Arrays",
-                "readme": "test readme file",
-                "isComplete": true
+                    "id": 2,
+                    "slug": "arrays",
+                    "title": "Arrays",
+                    "readme": "test readme file",
+                    "isComplete": true
                 }
             ]
         },

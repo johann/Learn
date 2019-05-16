@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Lesson: Curriculum, Codable {
+struct Lesson: Curriculum, Codable, Equatable {
     var id: Int
     var slug: String
     var title: String

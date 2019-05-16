@@ -47,6 +47,33 @@ final class UnitTest: XCTestCase {
         }
     }
     
+    // MARK .currentLesson
+    func test_UnitCurrentLesson_WhenItHasNoLessons_ReturnsNil() throws {
+        let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithoutLessons)
+        
+        XCTAssertNil(sut.currentLesson, "The `.currentLesson` should be nil if a unit has no lessons")
+    }
+    
+    func test_UnitCurrentLesson_WhenAllLessonsAreComplete_ReturnsNil() throws {
+        let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithCompletedLessons)
+        
+        XCTAssertNil(sut.currentLesson, "The `.currentLesson` should be nil if all lessons are complete")
+    }
+    
+    func test_UnitCurrentLesson_WhenFirstLessonIsCompleteButSecondLessonIsNot_ReturnsSecondLesson() throws {
+        let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithSomeCompletedLessons)
+        let secondLesson = sut.lessons?[1]
+        
+        XCTAssertEqual(sut.currentLesson, secondLesson, "The `.currentLesson` should equal the second lesson")
+    }
+    
+    func test_UnitCurrentLesson_WhenMoreThanOneLessonIsIncomplete_ReturnsFirstIncompleteLesson() throws {
+        let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithManyIncompleteLessons)
+        let firstIncompleteLesson = sut.lessons?.first(where: { !$0.isComplete })
+        
+        XCTAssertEqual(sut.currentLesson, firstIncompleteLesson, "The `.currentLesson` should equal the first incomplete lesson")
+    }
+    
     // Mark .isComplete
     func test_UnitIsComplete_WhenItHasNoLessons_ReturnsTrue() throws {
         let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithoutLessons)
@@ -100,6 +127,44 @@ final class UnitTest: XCTestCase {
     }
 }
 
+private let incompleteArraysLesson = """
+{
+    "id": 2,
+    "slug": "arrays",
+    "title": "Arrays",
+    "readme": "test readme file"
+}
+"""
+
+private let incompleteFunctionsLessons = """
+{
+    "id": 1,
+    "slug": "functions",
+    "title": "Functions",
+    "readme": "test readme file"
+}
+"""
+
+private let completedArraysLesson = """
+{
+    "id": 2,
+    "slug": "arrays",
+    "title": "Arrays",
+    "readme": "test readme file",
+    "isComplete": true
+}
+"""
+
+private let completedFunctionsLesson = """
+{
+    "id": 1,
+    "slug": "functions",
+    "title": "Functions",
+    "readme": "test readme file",
+    "isComplete": true
+}
+"""
+
 private let unitDataWithoutLessons = Data("""
 {
     "id": 1,
@@ -135,20 +200,8 @@ private let unitDataWithCompletedLessons = Data("""
     "slug": "intro-to-ds",
     "title": "Intro to DS",
     "lessons": [
-        {
-            "id": 1,
-            "slug": "functions",
-            "title": "Functions",
-            "readme": "test readme file",
-            "isComplete": true
-        },
-        {
-            "id": 2,
-            "slug": "arrays",
-            "title": "Arrays",
-            "readme": "test readme file",
-            "isComplete": true
-        }
+        \(completedFunctionsLesson),
+        \(completedArraysLesson)
     ]
 }
 """.utf8)
@@ -159,18 +212,8 @@ private let unitDataWithNoCompletedLessons = Data("""
     "slug": "intro-to-ds",
     "title": "Intro to DS",
     "lessons": [
-        {
-            "id": 1,
-            "slug": "functions",
-            "title": "Functions",
-            "readme": "test readme file"
-        },
-        {
-            "id": 2,
-            "slug": "arrays",
-            "title": "Arrays",
-            "readme": "test readme file"
-        }
+        \(incompleteFunctionsLessons),
+        \(incompleteArraysLesson)
     ]
 }
 """.utf8)
@@ -181,17 +224,31 @@ private let unitDataWithSomeCompletedLessons = Data("""
     "slug": "intro-to-ds",
     "title": "Intro to DS",
     "lessons": [
+        \(completedFunctionsLesson),
+        \(incompleteArraysLesson)
+    ]
+}
+""".utf8)
+
+private let unitDataWithManyIncompleteLessons = Data("""
+{
+    "id": 1,
+    "slug": "intro-to-ds",
+    "title": "Intro to DS",
+    "lessons": [
+        \(completedFunctionsLesson),
+        \(incompleteArraysLesson),
         {
-            "id": 1,
-            "slug": "functions",
-            "title": "Functions",
+            "id": 3,
+            "slug": "reduce",
+            "title": "Reduce",
             "readme": "test readme file",
             "isComplete": true
         },
         {
-            "id": 2,
-            "slug": "arrays",
-            "title": "Arrays",
+            "id": 4,
+            "slug": "map",
+            "title": "Map",
             "readme": "test readme file"
         }
     ]
