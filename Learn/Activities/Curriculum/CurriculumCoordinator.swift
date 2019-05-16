@@ -22,7 +22,6 @@ class CurriculumCoordinator: Coordinator {
         navigationController.viewControllers = [topicVC]
     }
     
-    
     func showTopic(_ topic: Topic) {
         let unitVC = UnitsViewController.instantiate()
         guard let units = topic.units else { return }

@@ -16,10 +16,8 @@ class ProfileViewController: UIViewController, Storyboardable {
     @IBOutlet weak var velocityLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var coordinator: ProfileCoordinator?
-
-    
     let store = UserDataStore.shared
+    var coordinator: ProfileCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -314,5 +314,33 @@
             </objects>
             <point key="canvasLocation" x="1924" y="236.13193403298354"/>
         </scene>
+        <!--Bookmarks View Controller-->
+        <scene sceneID="Pg9-0G-QIW">
+            <objects>
+                <viewController storyboardIdentifier="BookmarksViewController" id="rwg-ai-KlB" customClass="BookmarksViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zir-yh-jqU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookmarks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="185-gS-U4l">
+                                <rect key="frame" x="100" y="323" width="175" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="185-gS-U4l" firstAttribute="centerY" secondItem="zir-yh-jqU" secondAttribute="centerY" id="6EO-No-Ltk"/>
+                            <constraint firstItem="Lhq-Iq-KCe" firstAttribute="trailing" secondItem="185-gS-U4l" secondAttribute="trailing" constant="100" id="lse-qX-6tg"/>
+                            <constraint firstItem="185-gS-U4l" firstAttribute="leading" secondItem="Lhq-Iq-KCe" secondAttribute="leading" constant="100" id="yDS-QW-3qU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lhq-Iq-KCe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="duD-7K-Eje" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="-1263.4182908545729"/>
+        </scene>
     </scenes>
 </document>

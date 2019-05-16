@@ -17,6 +17,8 @@
 		67698DE9227FA66700982CF6 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67698DE8227FA66600982CF6 /* NetworkError.swift */; };
 		67698DEB227FA68100982CF6 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67698DEA227FA68100982CF6 /* WebService.swift */; };
 		67698DEF227FA92D00982CF6 /* LearnTrackCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67698DEE227FA92D00982CF6 /* LearnTrackCache.swift */; };
+		6784F032228DB3FB0043CE0C /* BookmarksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6784F031228DB3FB0043CE0C /* BookmarksCoordinator.swift */; };
+		6784F034228DB4720043CE0C /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6784F033228DB4720043CE0C /* BookmarksViewController.swift */; };
 		67BD6C33228995A500825CBF /* LearnApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD6C32228995A500825CBF /* LearnApiTest.swift */; };
 		67BD6C35228AE48B00825CBF /* curriculumFetchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 67BD6C34228AE48B00825CBF /* curriculumFetchData.json */; };
 		67BD6C38228AEC9400825CBF /* profileFetchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 67BD6C37228AEC9400825CBF /* profileFetchData.json */; };
@@ -71,6 +73,8 @@
 		67698DE8227FA66600982CF6 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		67698DEA227FA68100982CF6 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		67698DEE227FA92D00982CF6 /* LearnTrackCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTrackCache.swift; sourceTree = "<group>"; };
+		6784F031228DB3FB0043CE0C /* BookmarksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCoordinator.swift; sourceTree = "<group>"; };
+		6784F033228DB4720043CE0C /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		67BD6C252289953300825CBF /* LearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67BD6C292289953400825CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67BD6C32228995A500825CBF /* LearnApiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnApiTest.swift; sourceTree = "<group>"; };
@@ -146,6 +150,15 @@
 				C1BEB0D82270DE4000D22AF8 /* Curriculum.swift */,
 			);
 			path = Curriculum;
+			sourceTree = "<group>";
+		};
+		6784F030228DB3DA0043CE0C /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				6784F031228DB3FB0043CE0C /* BookmarksCoordinator.swift */,
+				6784F033228DB4720043CE0C /* BookmarksViewController.swift */,
+			);
+			path = Bookmarks;
 			sourceTree = "<group>";
 		};
 		67BD6C262289953400825CBF /* LearnTests */ = {
@@ -299,6 +312,7 @@
 		C1FFF993228343FD009C0D1E /* Activities */ = {
 			isa = PBXGroup;
 			children = (
+				6784F030228DB3DA0043CE0C /* Bookmarks */,
 				C10C56D7210282E300D903E8 /* Auth */,
 				C1FFF99622834737009C0D1E /* Profile */,
 				C10C56D6210282D300D903E8 /* Curriculum */,
@@ -496,6 +510,7 @@
 				C10C56CA21026CC100D903E8 /* Switcher.swift in Sources */,
 				67156DBC2267E000003BC44E /* TopicCollectionViewCell.swift in Sources */,
 				67698DEF227FA92D00982CF6 /* LearnTrackCache.swift in Sources */,
+				6784F032228DB3FB0043CE0C /* BookmarksCoordinator.swift in Sources */,
 				C10C56C721026B3100D903E8 /* Student.swift in Sources */,
 				C1BEB0DB2270DE8000D22AF8 /* Unit.swift in Sources */,
 				C18235C320FFB71700244E27 /* LearnApi.swift in Sources */,
@@ -512,6 +527,7 @@
 				67BD6C46228C4FAB00825CBF /* LearnColor.swift in Sources */,
 				67698DE9227FA66700982CF6 /* NetworkError.swift in Sources */,
 				C198B3DD226206A70036282B /* LessonViewCell.swift in Sources */,
+				6784F034228DB4720043CE0C /* BookmarksViewController.swift in Sources */,
 				C1BEB0D32270DA9700D22AF8 /* Lesson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

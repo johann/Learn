@@ -21,22 +21,4 @@ class ProfileCoordinator: Coordinator {
         
         navigationController.viewControllers = [profileVC]
     }
-    
-    
-//    func showTopic(_ topic: Topic) {
-//        let unitVC = UnitsViewController.instantiate()
-//        guard let units = topic.units else { return }
-//        unitVC.coordinator = self
-//        unitVC.title = topic.title
-//        unitVC.configureUnits(units)
-//        self.navigationController.pushViewController(unitVC, animated: true)
-//    }
-//
-//    func showLessonView(_ lesson: Lesson) {
-//        let lessonVC = LessonViewController.instantiate()
-//        lessonVC.configureLesson(lesson)
-//        self.navigationController.pushViewController(lessonVC, animated: true)
-//    }
 }
-
-
