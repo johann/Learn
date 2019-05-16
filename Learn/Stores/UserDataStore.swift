@@ -14,8 +14,8 @@ final class UserDataStore {
     var student: Student?
     var track: Track?
     var token: String {
-        guard let token = UserDefaults.standard.string(forKey: "token") else { fatalError("Token not found") }
-        return token
+       guard let token = UserDefaults.standard.string(forKey: "token") else { fatalError("Token not found") }
+       return token
     }
 
     fileprivate init() {}
