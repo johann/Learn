@@ -30,6 +30,7 @@ open class CollapsibleTableSectionViewController: UIViewController {
     
     public var delegate: CollapsibleTableSectionDelegate?
     
+    var progressSectionView: UIView!
     var tableview: UITableView!
     var sectionsState = [Int : Bool]()
     
@@ -69,10 +70,34 @@ open class CollapsibleTableSectionViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         
+        // MUST BE REBUILT
+            // Create the progressSectionView
+            progressSectionView = UIView()
+            progressSectionView.backgroundColor = UIColor.white
+            progressSectionView.frame = CGRect(x: 0, y: 0, width: progressSectionView.frame.width, height: progressSectionView.frame.height + 100)
+        
+            let progressView = UIProgressView(progressViewStyle: .default)
+            progressView.progressTintColor = LearnColor.yellow.value
+            progressView.trackTintColor = LearnColor.greyFaint.value
+            progressView.progress = 0.25
+            progressView.frame = CGRect(x: 20, y: 40, width: 372, height: 10)
+            progressView.transform = progressView.transform.scaledBy(x: 1, y: 8)
+        
+            progressSectionView.addSubview(progressView)
+        
+            // Create the progressLabel
+            let progressLabel = UILabel(frame: CGRect(x: 20, y: 70, width: 400, height: 20))
+            progressLabel.textAlignment = .left
+            progressLabel.font = UIFont.systemFont(ofSize: 15.0)
+            progressLabel.text = "3 out of 20 lessons completed for this topic!"
+            progressLabel.textColor = LearnColor.grey.value
+            progressSectionView.addSubview(progressLabel)
+        
         // Create the tableView
         tableview = UITableView()
         tableview.dataSource = self
         tableview.delegate = self
+        tableview.tableHeaderView = progressSectionView
         
         // Auto resizing the height of the cell
         tableview.estimatedRowHeight = 100.0
@@ -81,7 +106,7 @@ open class CollapsibleTableSectionViewController: UIViewController {
         // Auto layout the tableView
         view.addSubview(tableview)
         tableview.translatesAutoresizingMaskIntoConstraints = false
-        tableview.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor).isActive = true
+        tableview.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
         tableview.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor).isActive = true
         tableview.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableview.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
