@@ -17,3 +17,4 @@ class MainTabBarController: UITabBarController, Storyboardable {
         viewControllers = [curriculum.navigationController]
     }
 }
+
