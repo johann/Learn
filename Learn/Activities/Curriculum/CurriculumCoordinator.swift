@@ -16,11 +16,8 @@ class CurriculumCoordinator: Coordinator {
         self.navigationController.navigationBar.prefersLargeTitles = true
         
         let topicVC = TopicsViewController.instantiate()
-        topicVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "literature"), tag: 0)
+        topicVC.tabBarItem = UITabBarItem(title: "Lessons", image: UIImage(named: "literature"), tag: 0)
         topicVC.coordinator = self
-//        
-//        let homeVC = HomeViewController.instantiate()
-//        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "literature"), tag: 1)
         
         navigationController.viewControllers = [topicVC]
     }
