@@ -13,4 +13,20 @@ struct Topic: Curriculum, Codable {
     var slug: String
     var title: String
     var units: [Unit]?
+    var isComplete: Bool {
+       return lessonCount == lessonCompletionCount
+    }
+    var lessonCount: Int {
+        guard let units = units else { return 0 }
+        
+        return units.reduce(0, { acc, unit in
+            let lessons = unit.lessons ?? []
+            return acc + lessons.count
+        })
+    }
+    var lessonCompletionCount: Int {
+        guard let units = units else { return 0 }
+        
+        return units.reduce(0, { acc, unit in acc + unit.completedLessonCount })
+    }
 }

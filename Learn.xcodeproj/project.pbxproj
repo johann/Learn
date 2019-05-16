@@ -26,6 +26,9 @@
 		67BD6C35228AE48B00825CBF /* curriculumFetchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 67BD6C34228AE48B00825CBF /* curriculumFetchData.json */; };
 		67BD6C38228AEC9400825CBF /* profileFetchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 67BD6C37228AEC9400825CBF /* profileFetchData.json */; };
 		67BD6C3A228AEEFE00825CBF /* emptyResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 67BD6C39228AEEFE00825CBF /* emptyResponse.json */; };
+		67BD6C4A228C9E6200825CBF /* LessonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD6C49228C9E6200825CBF /* LessonTest.swift */; };
+		67BD6C4C228CA7A700825CBF /* UnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD6C4B228CA7A700825CBF /* UnitTest.swift */; };
+		67BD6C4E228CB1EC00825CBF /* TopicTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD6C4D228CB1EC00825CBF /* TopicTest.swift */; };
 		67BD6C46228C4FAB00825CBF /* LearnColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BD6C45228C4FAB00825CBF /* LearnColor.swift */; };
 		8D89BA55228DA9AA00FE9118 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D89BA54228DA9AA00FE9118 /* ProfileCoordinator.swift */; };
 		8F40F1DC20FBB1FB0090C604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40F1DB20FBB1FB0090C604 /* AppDelegate.swift */; };
@@ -92,6 +95,9 @@
 		67BD6C34228AE48B00825CBF /* curriculumFetchData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = curriculumFetchData.json; sourceTree = "<group>"; };
 		67BD6C37228AEC9400825CBF /* profileFetchData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profileFetchData.json; sourceTree = "<group>"; };
 		67BD6C39228AEEFE00825CBF /* emptyResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyResponse.json; sourceTree = "<group>"; };
+		67BD6C49228C9E6200825CBF /* LessonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTest.swift; sourceTree = "<group>"; };
+		67BD6C4B228CA7A700825CBF /* UnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTest.swift; sourceTree = "<group>"; };
+		67BD6C4D228CB1EC00825CBF /* TopicTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTest.swift; sourceTree = "<group>"; };
 		67BD6C45228C4FAB00825CBF /* LearnColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnColor.swift; sourceTree = "<group>"; };
 		8D89BA54228DA9AA00FE9118 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		8F40F1D820FBB1FB0090C604 /* Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +195,7 @@
 		67BD6C262289953400825CBF /* LearnTests */ = {
 			isa = PBXGroup;
 			children = (
+				67BD6C47228C9E4000825CBF /* Models */,
 				67BD6C2F2289954100825CBF /* Adapters */,
 				67BD6C292289953400825CBF /* Info.plist */,
 			);
@@ -212,6 +219,24 @@
 				67BD6C34228AE48B00825CBF /* curriculumFetchData.json */,
 			);
 			path = LearnAPITestData;
+			sourceTree = "<group>";
+		};
+		67BD6C47228C9E4000825CBF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				67BD6C48228C9E4C00825CBF /* Curriculum */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		67BD6C48228C9E4C00825CBF /* Curriculum */ = {
+			isa = PBXGroup;
+			children = (
+				67BD6C49228C9E6200825CBF /* LessonTest.swift */,
+				67BD6C4B228CA7A700825CBF /* UnitTest.swift */,
+				67BD6C4D228CB1EC00825CBF /* TopicTest.swift */,
+			);
+			path = Curriculum;
 			sourceTree = "<group>";
 		};
 		8F40F1CF20FBB1FB0090C604 = {
@@ -537,7 +562,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67BD6C4C228CA7A700825CBF /* UnitTest.swift in Sources */,
+				67BD6C4E228CB1EC00825CBF /* TopicTest.swift in Sources */,
 				67BD6C33228995A500825CBF /* LearnApiTest.swift in Sources */,
+				67BD6C4A228C9E6200825CBF /* LessonTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
