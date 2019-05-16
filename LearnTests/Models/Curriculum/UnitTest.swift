@@ -47,56 +47,56 @@ final class UnitTest: XCTestCase {
         }
     }
     
-    // Mark .isComplete()
+    // Mark .isComplete
     func test_UnitIsComplete_WhenItHasNoLessons_ReturnsTrue() throws {
         let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithoutLessons)
         
-        XCTAssert(sut.isComplete() == true, ".isComplete should be true there are no associated lessons")
+        XCTAssertTrue(sut.isComplete, ".isComplete should be true there are no associated lessons")
     }
     
     func test_UnitIsComplete_WhenAllLessonsAreCompleted_ReturnsTrue() throws {
         let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithCompletedLessons)
         
-        XCTAssert(sut.isComplete() == true, ".isComplete should be true when all lessons are completed")
+        XCTAssertTrue(sut.isComplete, ".isComplete should be true when all lessons are completed")
     }
     
     func test_UnitIsComplete_WhenNoLessonsAreCompleted_ReturnsFalse() throws {
         let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithNoCompletedLessons)
         
-        XCTAssert(sut.isComplete() == false, ".isComplete should be false if no lessons are completed")
+        XCTAssertFalse(sut.isComplete, ".isComplete should be false if no lessons are completed")
     }
     
     func test_UnitIsComplete_WhenSomeLessonsAreCompleted_ReturnsFalse() throws {
         let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithSomeCompletedLessons)
         
-        XCTAssert(sut.isComplete() == false, ".isComplete should be false if not all (but some) lessons are completed")
+        XCTAssertFalse(sut.isComplete, ".isComplete should be false if not all (but some) lessons are completed")
     }
     
-    // MARK .completedLessonsCount()
+    // MARK .completedLessonsCount
     func test_UnitCompletedLessonCount_WhenItHasNoLessons_Returns0() throws {
         let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithoutLessons)
         
-        XCTAssert(sut.completedLessonCount() == 0, ".completedLessonCount() should be `0` if there are no associated lessons")
+        XCTAssert(sut.completedLessonCount == 0, ".completedLessonCount() should be `0` if there are no associated lessons")
     }
     
     func test_UnitCompletedLessonCount_WhenAllLessonsAreCompleted_ReturnsSameCountAsLessons() throws {
         let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithCompletedLessons)
         let lessonCount = sut.lessons?.count
         
-        XCTAssert(sut.completedLessonCount() == lessonCount, ".completedLessonCount() should be \(String(describing: lessonCount)) when all lessons are completed")
+        XCTAssert(sut.completedLessonCount == lessonCount, ".completedLessonCount() should be \(String(describing: lessonCount)) when all lessons are completed")
     }
     
     func test_UnitCompletedLessonCount_WhenNoLessonsAreCompleted_Returns0() throws {
         let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithNoCompletedLessons)
         
-        XCTAssert(sut.completedLessonCount() == 0, ".completedLessonCount() should be `0` false if no lessons are completed")
+        XCTAssert(sut.completedLessonCount == 0, ".completedLessonCount() should be `0` false if no lessons are completed")
     }
     
     func test_UnitCompletedLessonCount_WhenSomeLessonsAreCompleted_ReturnsCountOfLessonsMarkedComplete() throws {
         let sut = try JSONDecoder().decode(Unit.self, from: unitDataWithSomeCompletedLessons)
         let completedLessonCount = sut.lessons?.filter{ $0.isComplete }.count
         
-        XCTAssert(sut.completedLessonCount() == completedLessonCount, ".isComplete should equal \(String(describing: completedLessonCount)) if not all (but some) lessons are completed")
+        XCTAssert(sut.completedLessonCount == completedLessonCount, ".isComplete should equal \(String(describing: completedLessonCount)) if not all (but some) lessons are completed")
     }
 }
 

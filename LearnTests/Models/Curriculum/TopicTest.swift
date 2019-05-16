@@ -46,23 +46,23 @@ final class TopicTest: XCTestCase {
         }
     }
     
-    // Mark .isComplete()
+    // Mark .isComplete
     func test_TopicIsComplete_WhenItHasNoUnits_ReturnsTrue() throws {
         let sut = try JSONDecoder().decode(Topic.self, from: topicDataWithoutUnits)
 
-        XCTAssert(sut.isComplete() == true, ".isComplete should be true if there are no associated units")
+        XCTAssertTrue(sut.isComplete, ".isComplete should be true if there are no associated units")
     }
     
     func test_TopicIsComplete_WhenItHasUnitsWithNoLessons_ReturnsTrue() throws {
         let sut = try JSONDecoder().decode(Topic.self, from: topicDataWithNoLessonUnits)
         
-        XCTAssert(sut.isComplete() == true, ".isComplete should be true if there are no associated lessons for a unit")
+        XCTAssertTrue(sut.isComplete, ".isComplete should be true if there are no associated lessons for a unit")
     }
     
     func test_TopicIsComplete_WhenAllLessonsInAllUnitsAreCompleted_ReturnsTrue() throws {
         let sut = try JSONDecoder().decode(Topic.self, from: topicDataAllUnitLessonsCompleted)
         
-        XCTAssert(sut.isComplete() == true, ".isComplete should be true if all lessons for all units")
+        XCTAssertTrue(sut.isComplete, ".isComplete should be true if all lessons for all units")
     }
 }
 
