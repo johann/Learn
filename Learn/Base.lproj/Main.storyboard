@@ -314,10 +314,10 @@
             </objects>
             <point key="canvasLocation" x="1924" y="236.13193403298354"/>
         </scene>
-        <!--View Controller-->
+        <!--Topic View Controller-->
         <scene sceneID="Y9J-TJ-QfF">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="aiB-tR-PEY" customClass="ViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopicViewController" id="aiB-tR-PEY" customClass="TopicViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YzS-wA-nFY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,6 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70l-dD-imh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-921" y="235"/>
         </scene>
     </scenes>
 </document>

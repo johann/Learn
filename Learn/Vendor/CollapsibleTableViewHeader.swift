@@ -18,37 +18,35 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     var section: Int = 0
     
     let titleLabel = UILabel()
-    let arrowLabel = UILabel()
+    let arrowImageView = UIImageView()
+    
     
     override public init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         
         // Content View
-        contentView.backgroundColor = UIColor(hex: 0x2E3944)
+//        contentView.backgroundColor = UIColor(hex: 0x2E3944)
+        contentView.backgroundColor = UIColor.white
         
         let marginGuide = contentView.layoutMarginsGuide
-        
-        // Arrow label
-        contentView.addSubview(arrowLabel)
-        arrowLabel.textColor = UIColor.white
-        arrowLabel.translatesAutoresizingMaskIntoConstraints = false
-        arrowLabel.widthAnchor.constraint(equalToConstant: 12).isActive = true
-        arrowLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
-        arrowLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
-        arrowLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
+        arrowImageView.image = UIImage(named: "up-arrow")
+        contentView.addSubview(arrowImageView)
+        arrowImageView.translatesAutoresizingMaskIntoConstraints = false
+        arrowImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        arrowImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        arrowImageView.centerYAnchor.constraint(equalTo: marginGuide.centerYAnchor).isActive = true
+        arrowImageView.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         
         // Title label
         contentView.addSubview(titleLabel)
-        titleLabel.textColor = UIColor.white
+        titleLabel.textColor = UIColor.black
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
-        
-        //
-        // Call tapHeader when tapping on this header
-        //
+        titleLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
+//        titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CollapsibleTableViewHeader.tapHeader(_:))))
     }
     
@@ -56,9 +54,6 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //
-    // Trigger toggle section when tapping on the header
-    //
     @objc func tapHeader(_ gestureRecognizer: UITapGestureRecognizer) {
         guard let cell = gestureRecognizer.view as? CollapsibleTableViewHeader else {
             return
@@ -68,10 +63,7 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     }
     
     func setCollapsed(_ collapsed: Bool) {
-        //
-        // Animate the arrow rotation (see Extensions.swf)
-        //
-        arrowLabel.rotate(collapsed ? 0.0 : .pi / 2)
+        arrowImageView.rotate(collapsed ? 0.0 : .pi)
     }
     
 }
