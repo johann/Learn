@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="1134" y="-143"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="RYg-Si-FPh">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="aPm-g8-d3k" customClass="HomeViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="aPm-g8-d3k" customClass="ProfileViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TXQ-6b-Mhs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -328,6 +328,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70l-dD-imh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-921" y="235"/>
+        </scene>
+        <!--Quizzes View Controller-->
+        <scene sceneID="D3T-9E-q6R">
+            <objects>
+                <viewController storyboardIdentifier="QuizzesViewController" id="UGU-Aq-Xyi" customClass="QuizzesViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tr4-Fe-UDo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quizzes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7u-mk-VqZ">
+                                <rect key="frame" x="100" y="323" width="175" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="U7u-mk-VqZ" firstAttribute="centerY" secondItem="tr4-Fe-UDo" secondAttribute="centerY" id="4Po-f4-bTY"/>
+                            <constraint firstItem="U7u-mk-VqZ" firstAttribute="leading" secondItem="DF9-QS-ePz" secondAttribute="leading" constant="100" id="VwT-3V-qBP"/>
+                            <constraint firstItem="DF9-QS-ePz" firstAttribute="trailing" secondItem="U7u-mk-VqZ" secondAttribute="trailing" constant="100" id="qyd-HR-Ngq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DF9-QS-ePz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Sa-EJ-vVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="-1979"/>
+        </scene>
+        <!--Bookmarks View Controller-->
+        <scene sceneID="Pg9-0G-QIW">
+            <objects>
+                <viewController storyboardIdentifier="BookmarksViewController" id="rwg-ai-KlB" customClass="BookmarksViewController" customModule="Learn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zir-yh-jqU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookmarks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="185-gS-U4l">
+                                <rect key="frame" x="100" y="323" width="175" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="185-gS-U4l" firstAttribute="centerY" secondItem="zir-yh-jqU" secondAttribute="centerY" id="6EO-No-Ltk"/>
+                            <constraint firstItem="Lhq-Iq-KCe" firstAttribute="trailing" secondItem="185-gS-U4l" secondAttribute="trailing" constant="100" id="lse-qX-6tg"/>
+                            <constraint firstItem="185-gS-U4l" firstAttribute="leading" secondItem="Lhq-Iq-KCe" secondAttribute="leading" constant="100" id="yDS-QW-3qU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lhq-Iq-KCe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="duD-7K-Eje" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="-1263.4182908545729"/>
         </scene>
     </scenes>
 </document>

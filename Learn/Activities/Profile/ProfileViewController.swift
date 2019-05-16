@@ -10,13 +10,14 @@ import UIKit
 import OAuthSwift
 import Kingfisher
 
-class HomeViewController: UIViewController {
+class ProfileViewController: UIViewController, Storyboardable {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var completionLabel: UILabel!
     @IBOutlet weak var velocityLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
     let store = UserDataStore.shared
+    var coordinator: ProfileCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
