@@ -9,6 +9,7 @@
 import UIKit
 
 class UnitViewCell: UITableViewCell, Identifiable {
+    var containerFrame = 0.0
     var lessonDelegate: LessonDelegate?
     lazy var flowlayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -18,7 +19,7 @@ class UnitViewCell: UITableViewCell, Identifiable {
     }()
     
     lazy var collectionView: UICollectionView = {
-        let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.frame.width + 60, height: 200), collectionViewLayout: flowlayout)
+        let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.containerFrame, height: 200), collectionViewLayout: flowlayout)
         cv.backgroundColor = UIColor.white
         cv.register(LessonCell.self, forCellWithReuseIdentifier: LessonCell.identifier())
         cv.showsHorizontalScrollIndicator = false
@@ -33,7 +34,7 @@ class UnitViewCell: UITableViewCell, Identifiable {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.backgroundColor = UIColor.yellow
-        self.addSubview(self.collectionView)
+        
 
     }
     
@@ -46,6 +47,7 @@ class UnitViewCell: UITableViewCell, Identifiable {
         if let lessons = unit.lessons {
             self.lessons = lessons
         }
+        self.addSubview(self.collectionView)
     }
 }
 
