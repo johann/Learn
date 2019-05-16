@@ -18,11 +18,11 @@ class CurriculumCoordinator: Coordinator {
 //        let topicVC = TopicsViewController.instantiate()
 //        topicVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "literature"), tag: 0)
 //        topicVC.coordinator = self
+    
+        let topicVC = TopicViewController.instantiate()
+        topicVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "literature"), tag: 0)
         
-        
-        let vc = ViewController.instantiate()
-        
-        navigationController.viewControllers = [vc]
+        navigationController.viewControllers = [topicVC]
     }
     
     
