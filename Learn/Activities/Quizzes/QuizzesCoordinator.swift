@@ -1,5 +1,5 @@
 //
-//  BookmarksCoordinator.swift
+//  QuizzesCoordinator.swift
 //  Learn
 //
 //  Created by Luke Ghenco on 5/16/19.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-class BookmarksCoordinator: Coordinator {
+class QuizzesCoordinator: Coordinator {
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController = .init()) {
         self.navigationController = navigationController
         self.navigationController.navigationBar.prefersLargeTitles = true
         
-        let bookmarksVC = BookmarksViewController.instantiate()
-        bookmarksVC.tabBarItem = UITabBarItem(title: "Bookmarks", image: UIImage(named: "bookmarks-inactive"), tag: 0)
-        bookmarksVC.coordinator = self
+        let quizzesVC = QuizzesViewController.instantiate()
+        quizzesVC.tabBarItem = UITabBarItem(title: "Quizzes", image: UIImage(named: "quizzes-inactive"), tag: 0)
+        quizzesVC.coordinator = self
         
-        navigationController.viewControllers = [bookmarksVC]
+        navigationController.viewControllers = [quizzesVC]
     }
 }

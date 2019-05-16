@@ -12,12 +12,18 @@ class MainTabBarController: UITabBarController, Storyboardable {
     let curriculum = CurriculumCoordinator()
     let profile = ProfileCoordinator()
     let bookmarks = BookmarksCoordinator()
+    let quizzes = QuizzesCoordinator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.tintColor = LearnColor.black.value
+        self.tabBar.barTintColor = LearnColor.black.value
   
-        viewControllers = [curriculum.navigationController, profile.navigationController, bookmarks.navigationController]
+        viewControllers = [
+            curriculum.navigationController,
+            profile.navigationController,
+            bookmarks.navigationController,
+            quizzes.navigationController
+        ]
     }
 }
 

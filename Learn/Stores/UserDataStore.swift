@@ -14,13 +14,12 @@ final class UserDataStore {
     var student: Student?
     var track: Track?
     var token: String {
-//        guard let token = UserDefaults.standard.string(forKey: "token") else { fatalError("Token not found") }
-//        return token
-        return "537c1fd6aae5a3728668f5983681ec9ee8d616358c67cb00239dbf61e76aea1c"
+        guard let token = UserDefaults.standard.string(forKey: "token") else { fatalError("Token not found") }
+        return token
     }
-    
+
     fileprivate init() {}
-    
+
     func fetchProfile(completion: @escaping (Student) -> ()) {
         LearnApi().getProfile(token) { (response) in
             switch response {
@@ -34,10 +33,10 @@ final class UserDataStore {
             }
         }
     }
-    
+
     func fetchCurriculum(completion: @escaping (Track) -> ()) {
         guard let student = self.student else { fatalError("Student is not defined") }
-        
+
         if let track = LearnTrackCache().get() {
             if track.uuid == student.activeTrack.uuid {
                 self.track = track
@@ -47,7 +46,7 @@ final class UserDataStore {
                 LearnTrackCache().remove(track.uuid)
             }
         }
-        
+
         LearnApi().getCurriculum(
             token,
             userId: student.id,
@@ -61,12 +60,12 @@ final class UserDataStore {
             case .failure(let error):
                 print(error)
             }
-            
+
         }
     }
-    
+
     // MARK: Persistence Layer
-    
+
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Learn")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -76,7 +75,7 @@ final class UserDataStore {
         })
         return container
     }()
-    
+
     private func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

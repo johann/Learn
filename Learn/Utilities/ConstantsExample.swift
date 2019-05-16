@@ -1,5 +1,5 @@
 //
-//  Constants.example.swift
+//  ConstantsExample.swift
 //  Learn
 //
 //  Created by Luke Ghenco on 5/16/19.
