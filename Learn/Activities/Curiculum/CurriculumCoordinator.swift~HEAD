@@ -13,15 +13,14 @@ class CurriculumCoordinator: Coordinator {
 
     init(navigationController: UINavigationController = .init()) {
         self.navigationController = navigationController
-        self.navigationController.navigationBar.prefersLargeTitles = true
-        
+
         let topicVC = TopicsViewController.instantiate()
         topicVC.tabBarItem = UITabBarItem(title: "Lessons", image: UIImage(named: "lessons-inactive"), tag: 0)
         topicVC.coordinator = self
-        
+
         navigationController.viewControllers = [topicVC]
     }
-    
+
     func showTopic(_ topic: Topic) {
         let unitVC = UnitsViewController.instantiate()
         guard let units = topic.units else { return }
@@ -30,11 +29,13 @@ class CurriculumCoordinator: Coordinator {
         unitVC.configureUnits(units)
         self.navigationController.pushViewController(unitVC, animated: true)
     }
-    
+
     func showLessonView(_ lesson: Lesson) {
         let lessonVC = LessonViewController.instantiate()
         lessonVC.configureLesson(lesson)
-        self.navigationController.pushViewController(lessonVC, animated: true)
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [lessonVC]
+        self.navigationController.present(navigationController, animated: true, completion: nil)
     }
 }
 
