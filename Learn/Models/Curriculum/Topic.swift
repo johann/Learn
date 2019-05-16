@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Topic: Curriculum, Codable {
+class Topic: Curriculum, Codable {
     var id: Int
     var slug: String
     var title: String

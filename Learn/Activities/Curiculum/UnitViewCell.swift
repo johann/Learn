@@ -29,7 +29,11 @@ class UnitViewCell: UITableViewCell, Identifiable {
     }()
     
     
-    var lessons: [Lesson] = []
+    var lessons: [Lesson] = [] {
+        didSet {
+
+        }
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

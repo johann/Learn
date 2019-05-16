@@ -13,6 +13,7 @@ class LessonViewController: UIViewController, Storyboardable {
     var lesson: Lesson?
     var completeBtn = UIButton()
     var markDownView: DownView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +58,7 @@ class LessonViewController: UIViewController, Storyboardable {
     }
     
     @objc func markAsComplete() {
-        // save some things
+        self.lesson?.complete()
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     

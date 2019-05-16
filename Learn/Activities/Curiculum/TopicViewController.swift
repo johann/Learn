@@ -34,7 +34,7 @@ class TopicViewController: CollapsibleTableSectionViewController, Storyboardable
             }
         }
     }
-    
+
     
     func reloadView() {
         DispatchQueue.main.async {
@@ -86,7 +86,7 @@ extension TopicViewController: CollapsibleTableSectionDelegate {
     
     func collapsibleTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell: UnitViewCell = tableView.dequeueReusableCell(withIdentifier: UnitViewCell.identifier()) as? UnitViewCell else { print("Hello"); return UnitViewCell(style: .default, reuseIdentifier: UnitViewCell.identifier())}
+        guard let cell: UnitViewCell = tableView.dequeueReusableCell(withIdentifier: UnitViewCell.identifier()) as? UnitViewCell else { return UnitViewCell(style: .default, reuseIdentifier: UnitViewCell.identifier())}
         
         cell.containerFrame = Double(self.view.frame.width)
         cell.lessonDelegate = self.coordinator
@@ -110,8 +110,8 @@ extension TopicViewController: CollapsibleTableSectionDelegate {
     func collapsibleTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let units = self.units else { return "" }
         let unit = units[section]
-     
-        return unit.title
+        guard let lessons = unit.lessons else { return "" }
+        return "\(unit.title) - (\(lessons.count))"
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

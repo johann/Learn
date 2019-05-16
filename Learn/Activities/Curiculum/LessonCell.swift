@@ -11,7 +11,12 @@ import UIKit
 class LessonCell: UICollectionViewCell, Identifiable {
     
     var lessonLabel = UILabel()
+    var lesson: Lesson? {
+        didSet {
+        }
+    }
     
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(lessonLabel)
@@ -29,6 +34,7 @@ class LessonCell: UICollectionViewCell, Identifiable {
     }
     
     func configureLesson(_ lesson: Lesson) {
+        self.lesson = lesson
         self.lessonLabel.text = lesson.title
     }
     
