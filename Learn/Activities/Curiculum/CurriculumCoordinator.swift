@@ -21,6 +21,7 @@ class CurriculumCoordinator: Coordinator {
     
         let topicVC = TopicViewController.instantiate()
         topicVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "literature"), tag: 0)
+        topicVC.coordinator = self
         
         navigationController.viewControllers = [topicVC]
     }
@@ -38,7 +39,9 @@ class CurriculumCoordinator: Coordinator {
     func showLessonView(_ lesson: Lesson) {
         let lessonVC = LessonViewController.instantiate()
         lessonVC.configureLesson(lesson)
-        self.navigationController.pushViewController(lessonVC, animated: true)
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [lessonVC]
+        self.navigationController.present(navigationController, animated: true, completion: nil)
     }
 }
 
