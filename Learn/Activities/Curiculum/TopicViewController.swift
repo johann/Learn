@@ -13,6 +13,7 @@ class TopicViewController: CollapsibleTableSectionViewController, Storyboardable
     let store = UserDataStore.shared
     var track: Track?
     var units: [Unit]?
+    var coordinator: CurriculumCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +87,7 @@ extension TopicViewController: CollapsibleTableSectionDelegate {
     func collapsibleTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell: UnitViewCell = tableView.dequeueReusableCell(withIdentifier: UnitViewCell.identifier()) as? UnitViewCell else { return UnitViewCell(style: .default, reuseIdentifier: UnitViewCell.identifier())}
         
-    
+        cell.lessonDelegate = self.coordinator
         if let units = self.units {
             let unit = units[indexPath.section]
             cell.configureCell(unit)

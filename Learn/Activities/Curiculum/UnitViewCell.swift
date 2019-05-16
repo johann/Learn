@@ -9,22 +9,21 @@
 import UIKit
 
 class UnitViewCell: UITableViewCell, Identifiable {
+    var lessonDelegate: LessonDelegate?
     lazy var flowlayout: UICollectionViewFlowLayout = {
-        let l = UICollectionViewFlowLayout()
-    
-        l.scrollDirection = .horizontal
-        let spacing = CGFloat(10.0)
-        l.itemSize = CGSize(width: self.frame.width, height: 180)
-
-        return l
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: self.frame.width, height: 180)
+        return layout
     }()
     
     lazy var collectionView: UICollectionView = {
         let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.frame.width + 60, height: 200), collectionViewLayout: flowlayout)
+        cv.backgroundColor = UIColor.white
         cv.register(LessonCell.self, forCellWithReuseIdentifier: LessonCell.identifier())
+        cv.showsHorizontalScrollIndicator = false
         cv.delegate = self
         cv.dataSource = self
-        cv.backgroundColor = UIColor.purple
         return cv
     }()
     
@@ -50,7 +49,12 @@ class UnitViewCell: UITableViewCell, Identifiable {
     }
 }
 
-extension UnitViewCell: UICollectionViewDelegate {}
+extension UnitViewCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let lesson = self.lessons[indexPath.row]
+        lessonDelegate?.selectLesson(lesson)
+    }
+}
 extension UnitViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return lessons.count
