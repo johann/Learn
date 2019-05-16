@@ -46,6 +46,7 @@
 		C12DAE68228CB417003E2FE9 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE67228CB417003E2FE9 /* LessonCell.swift */; };
 		C12DAE6A228CB42C003E2FE9 /* UnitViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE69228CB42C003E2FE9 /* UnitViewCell.swift */; };
 		C12DAE6E228DA4EA003E2FE9 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE6D228DA4EA003E2FE9 /* Identifiable.swift */; };
+		C12DAE70228DCC56003E2FE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12DAE6F228DCC56003E2FE9 /* Constants.swift */; };
 		C18235C320FFB71700244E27 /* LearnApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18235C220FFB71700244E27 /* LearnApi.swift */; };
 		C19121312268F9CE0065601A /* Learn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C191212F2268F9CE0065601A /* Learn.xcdatamodeld */; };
 		C198B3DD226206A70036282B /* LessonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C198B3DC226206A70036282B /* LessonViewCell.swift */; };
@@ -117,6 +118,7 @@
 		C12DAE67228CB417003E2FE9 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
 		C12DAE69228CB42C003E2FE9 /* UnitViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitViewCell.swift; sourceTree = "<group>"; };
 		C12DAE6D228DA4EA003E2FE9 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		C12DAE6F228DCC56003E2FE9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C18235C220FFB71700244E27 /* LearnApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnApi.swift; sourceTree = "<group>"; };
 		C19121302268F9CE0065601A /* Learn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Learn.xcdatamodel; sourceTree = "<group>"; };
 		C198B3DC226206A70036282B /* LessonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewCell.swift; sourceTree = "<group>"; };
